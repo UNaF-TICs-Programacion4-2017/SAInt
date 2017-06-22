@@ -87,11 +87,11 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
             </div>
             <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+                <input type="checkbox" value="remember-me">Recordarme
+                <span class="pull-right"> <a href="#">Olvidaste tu contraseña</a></span>
             </label>
-            <button class="btn btn-primary btn-lg btn-block"  type="submit" id="login2">Login</button>
-            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
+            <button class="btn btn-primary btn-lg btn-block"  type="submit" id="login2">Iniciar Sesión</button>
+            <button class="btn btn-info btn-lg btn-block" type="submit">Cerrar Sesión</button>
         </div>
       </form>
     <div class="text-right">
