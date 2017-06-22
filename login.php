@@ -2,7 +2,7 @@
 session_start();
 $username = $_POST['name'];
 $password = $_POST['pwd'];
-$mysqli=mysqli_connect('localhost','root','','prueba');
+$mysqli=mysqli_connect('localhost','root','','saint');
 
 $query = "SELECT * FROM tab_usuario WHERE usu_username='$username' AND usu_password='$password'";
 $result = mysqli_query($mysqli,$query)or die(mysqli_error());
