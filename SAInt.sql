@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2017 a las 21:39:23
+-- Tiempo de generación: 22-06-2017 a las 20:41:02
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -46,8 +46,22 @@ CREATE TABLE `tab_asistencia` (
   `asis_estado` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `rela_profesor` int(10) NOT NULL,
   `rela_materia` int(10) NOT NULL,
-  `rela_alumno` int(10) NOT NULL
+  `rela_alumno` int(10) NOT NULL,
+  `rela_curso` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tab_contacto`
+--
+
+CREATE TABLE `tab_contacto` (
+  `id_contacto` int(10) NOT NULL,
+  `cont_descripcion` int(3) NOT NULL,
+  `cont_nro_telefono` int(20) NOT NULL,
+  `rela_persona` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -74,6 +88,22 @@ CREATE TABLE `tab_curso_profe` (
   `rela_curso` int(10) NOT NULL,
   `rela_profe` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tab_direccion`
+--
+
+CREATE TABLE `tab_direccion` (
+  `id_direccion` int(10) NOT NULL,
+  `dir_provincia` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `dir_localidad` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `dir_barrio` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `dir_calle` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `dir_manzana` int(3) NOT NULL,
+  `dir_casa` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -111,8 +141,7 @@ CREATE TABLE `tab_persona` (
   `pers_dni` int(8) NOT NULL,
   `pers_sexo` int(1) NOT NULL COMMENT 'Si es 0 es masculino, Si es 1 es femenino',
   `pers_nacionalidad` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `rela_direccion` int(10) NOT NULL,
-  `rela_contacto` int(10) NOT NULL
+  `rela_direccion` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
@@ -165,6 +194,18 @@ CREATE TABLE `tab_tutor` (
   `rela_persona` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tab_usuario`
+--
+
+CREATE TABLE `tab_usuario` (
+  `id_usuario` int(10) NOT NULL,
+  `usu_username` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `usu_password` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -173,25 +214,48 @@ CREATE TABLE `tab_tutor` (
 -- Indices de la tabla `tab_alumno`
 --
 ALTER TABLE `tab_alumno`
-  ADD PRIMARY KEY (`id_alumno`);
+  ADD PRIMARY KEY (`id_alumno`),
+  ADD KEY `rela_persona` (`rela_persona`),
+  ADD KEY `rela_tutor` (`rela_tutor`,`rela_curso`),
+  ADD KEY `rela_curso` (`rela_curso`);
 
 --
 -- Indices de la tabla `tab_asistencia`
 --
 ALTER TABLE `tab_asistencia`
-  ADD PRIMARY KEY (`id_asistencia`);
+  ADD PRIMARY KEY (`id_asistencia`),
+  ADD KEY `rela_profesor` (`rela_profesor`,`rela_materia`,`rela_alumno`,`rela_curso`),
+  ADD KEY `rela_alumno` (`rela_alumno`),
+  ADD KEY `rela_materia` (`rela_materia`),
+  ADD KEY `rela_curso` (`rela_curso`);
+
+--
+-- Indices de la tabla `tab_contacto`
+--
+ALTER TABLE `tab_contacto`
+  ADD PRIMARY KEY (`id_contacto`),
+  ADD KEY `rela_persona` (`rela_persona`);
 
 --
 -- Indices de la tabla `tab_curso`
 --
 ALTER TABLE `tab_curso`
-  ADD PRIMARY KEY (`id_curso`);
+  ADD PRIMARY KEY (`id_curso`),
+  ADD KEY `rela_preceptor` (`rela_preceptor`);
 
 --
 -- Indices de la tabla `tab_curso_profe`
 --
 ALTER TABLE `tab_curso_profe`
-  ADD PRIMARY KEY (`id_curso_profe`);
+  ADD PRIMARY KEY (`id_curso_profe`),
+  ADD KEY `rela_curso` (`rela_curso`,`rela_profe`),
+  ADD KEY `rela_profe` (`rela_profe`);
+
+--
+-- Indices de la tabla `tab_direccion`
+--
+ALTER TABLE `tab_direccion`
+  ADD PRIMARY KEY (`id_direccion`);
 
 --
 -- Indices de la tabla `tab_materia`
@@ -203,37 +267,51 @@ ALTER TABLE `tab_materia`
 -- Indices de la tabla `tab_materia_curso`
 --
 ALTER TABLE `tab_materia_curso`
-  ADD PRIMARY KEY (`id_materia_curso`);
+  ADD PRIMARY KEY (`id_materia_curso`),
+  ADD KEY `rela_materia` (`rela_materia`,`rela_curso`),
+  ADD KEY `rela_curso` (`rela_curso`);
 
 --
 -- Indices de la tabla `tab_persona`
 --
 ALTER TABLE `tab_persona`
-  ADD PRIMARY KEY (`id_persona`);
+  ADD PRIMARY KEY (`id_persona`),
+  ADD KEY `rela_direccion` (`rela_direccion`);
 
 --
 -- Indices de la tabla `tab_preceptor`
 --
 ALTER TABLE `tab_preceptor`
-  ADD PRIMARY KEY (`id_preceptor`);
+  ADD PRIMARY KEY (`id_preceptor`),
+  ADD KEY `rela_persona` (`rela_persona`);
 
 --
 -- Indices de la tabla `tab_profesor`
 --
 ALTER TABLE `tab_profesor`
-  ADD PRIMARY KEY (`id_profesor`);
+  ADD PRIMARY KEY (`id_profesor`),
+  ADD KEY `rela_persona` (`rela_persona`);
 
 --
 -- Indices de la tabla `tab_profe_materia`
 --
 ALTER TABLE `tab_profe_materia`
-  ADD PRIMARY KEY (`id_profe_materia`);
+  ADD PRIMARY KEY (`id_profe_materia`),
+  ADD KEY `rela_materia` (`rela_materia`,`rela_profe`),
+  ADD KEY `rela_profe` (`rela_profe`);
 
 --
 -- Indices de la tabla `tab_tutor`
 --
 ALTER TABLE `tab_tutor`
-  ADD PRIMARY KEY (`id_tutor`);
+  ADD PRIMARY KEY (`id_tutor`),
+  ADD KEY `rela_persona` (`rela_persona`);
+
+--
+-- Indices de la tabla `tab_usuario`
+--
+ALTER TABLE `tab_usuario`
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -250,6 +328,11 @@ ALTER TABLE `tab_alumno`
 ALTER TABLE `tab_asistencia`
   MODIFY `id_asistencia` int(10) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `tab_contacto`
+--
+ALTER TABLE `tab_contacto`
+  MODIFY `id_contacto` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `tab_curso`
 --
 ALTER TABLE `tab_curso`
@@ -259,6 +342,11 @@ ALTER TABLE `tab_curso`
 --
 ALTER TABLE `tab_curso_profe`
   MODIFY `id_curso_profe` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tab_direccion`
+--
+ALTER TABLE `tab_direccion`
+  MODIFY `id_direccion` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tab_materia`
 --
@@ -294,6 +382,89 @@ ALTER TABLE `tab_profe_materia`
 --
 ALTER TABLE `tab_tutor`
   MODIFY `id_tutor` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `tab_usuario`
+--
+ALTER TABLE `tab_usuario`
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `tab_alumno`
+--
+ALTER TABLE `tab_alumno`
+  ADD CONSTRAINT `tab_alumno_ibfk_1` FOREIGN KEY (`rela_persona`) REFERENCES `tab_persona` (`id_persona`),
+  ADD CONSTRAINT `tab_alumno_ibfk_2` FOREIGN KEY (`rela_tutor`) REFERENCES `tab_tutor` (`id_tutor`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_alumno_ibfk_3` FOREIGN KEY (`rela_curso`) REFERENCES `tab_curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_asistencia`
+--
+ALTER TABLE `tab_asistencia`
+  ADD CONSTRAINT `tab_asistencia_ibfk_1` FOREIGN KEY (`rela_alumno`) REFERENCES `tab_alumno` (`id_alumno`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_asistencia_ibfk_2` FOREIGN KEY (`rela_materia`) REFERENCES `tab_materia` (`id_materia`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_asistencia_ibfk_3` FOREIGN KEY (`rela_curso`) REFERENCES `tab_curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_asistencia_ibfk_4` FOREIGN KEY (`rela_profesor`) REFERENCES `tab_profesor` (`id_profesor`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_contacto`
+--
+ALTER TABLE `tab_contacto`
+  ADD CONSTRAINT `tab_contacto_ibfk_1` FOREIGN KEY (`rela_persona`) REFERENCES `tab_persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_curso`
+--
+ALTER TABLE `tab_curso`
+  ADD CONSTRAINT `tab_curso_ibfk_1` FOREIGN KEY (`rela_preceptor`) REFERENCES `tab_preceptor` (`id_preceptor`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_curso_profe`
+--
+ALTER TABLE `tab_curso_profe`
+  ADD CONSTRAINT `tab_curso_profe_ibfk_1` FOREIGN KEY (`rela_curso`) REFERENCES `tab_curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_curso_profe_ibfk_2` FOREIGN KEY (`rela_profe`) REFERENCES `tab_preceptor` (`id_preceptor`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_materia_curso`
+--
+ALTER TABLE `tab_materia_curso`
+  ADD CONSTRAINT `tab_materia_curso_ibfk_1` FOREIGN KEY (`rela_curso`) REFERENCES `tab_curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_materia_curso_ibfk_2` FOREIGN KEY (`rela_materia`) REFERENCES `tab_materia` (`id_materia`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_persona`
+--
+ALTER TABLE `tab_persona`
+  ADD CONSTRAINT `tab_persona_ibfk_1` FOREIGN KEY (`rela_direccion`) REFERENCES `tab_direccion` (`id_direccion`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_preceptor`
+--
+ALTER TABLE `tab_preceptor`
+  ADD CONSTRAINT `tab_preceptor_ibfk_1` FOREIGN KEY (`rela_persona`) REFERENCES `tab_persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_profesor`
+--
+ALTER TABLE `tab_profesor`
+  ADD CONSTRAINT `tab_profesor_ibfk_1` FOREIGN KEY (`rela_persona`) REFERENCES `tab_persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_profe_materia`
+--
+ALTER TABLE `tab_profe_materia`
+  ADD CONSTRAINT `tab_profe_materia_ibfk_1` FOREIGN KEY (`rela_materia`) REFERENCES `tab_materia` (`id_materia`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tab_profe_materia_ibfk_2` FOREIGN KEY (`rela_profe`) REFERENCES `tab_profesor` (`id_profesor`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `tab_tutor`
+--
+ALTER TABLE `tab_tutor`
+  ADD CONSTRAINT `tab_tutor_ibfk_1` FOREIGN KEY (`rela_persona`) REFERENCES `tab_persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
