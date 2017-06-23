@@ -76,23 +76,24 @@
 
       <form class="login-form" action="login.php">        
         <div  class="login-wrap">
-        <div class="err" id="add_err"></div>
+ 
+          <div class="err" align="center" id="add_err"></div>
+          
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username" autofocus>
+              <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Usuario" autofocus>
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
             </div>
             <label class="checkbox">
-                <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+                <input type="checkbox" value="remember-me"> Recordarme
+                <span class="pull-right"> <a href="#"> ¿Olvido su contraseña?</a></span>
             </label>
-            <button class="btn btn-primary btn-lg btn-block"  type="submit" id="login2">Login</button>
-            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
-        </div>
+            <button class="btn btn-primary btn-lg btn-block"  type="submit" id="login2">Ingresar</button>
+          </div>
       </form>
     <div class="text-right">
             <div class="credits">
