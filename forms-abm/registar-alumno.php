@@ -299,7 +299,7 @@
                       </a>
                   </li>          
                   <li class="sub-menu">
-                        <a class="" href="../basic_table.html">
+                        <a class="" href="../basic_table.php">
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
                         </a>

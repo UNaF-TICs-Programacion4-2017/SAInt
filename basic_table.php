@@ -90,7 +90,7 @@
                       </a>
                   </li>          
                   <li class="sub-menu">
-                        <a class="" href="basic_table.html">
+                        <a class="" href="basic_table.php">
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
                         </a>    
@@ -125,7 +125,6 @@
                                  <th></i> DNI</th>
                                  <th><i class="icon_mobile"></i> Telefono</th>
                                  <th><i class="icon_mobile"></i>Telefono Tutor</th>
-                                 <th><i class="icon_mobile"></i> Asistencia </th>
                                  <th><i class="icon_cogs"></i>Accion</th>
                               </tr>
                               <tr>
@@ -133,7 +132,7 @@
                                  <td>234234234</td>
                                  <td>3704897632</td>
                                  <td>3704897632</td>
-                                 <td>Presente</td>
+                                 
                                  <td>
                                   <div class="btn-group">
                                       <a class="btn btn-primary" href="forms-abm\registar-alumno.php" title = "Modificar"><i class="icon_plus_alt2"></i></a>
@@ -147,7 +146,7 @@
                                  <td>234234234</td>
                                  <td>3704897632</td>
                                  <td>3704897632</td>
-                                 <td>Presente</td>
+                                
                                  <td>
                                   <div class="btn-group">
                                       <a class="btn btn-primary" href="#" title = "Modificar"><i class="icon_plus_alt2"></i></a>
@@ -161,7 +160,7 @@
                                  <td>234234234</td>
                                  <td>3704897632</td>
                                  <td>3704897632</td>
-                                 <td>Ausente</td>
+                                 
                                  <td>
                                  <div class="btn-group">
                                       <a class="btn btn-primary" href="#" title = "Modificar"><i class="icon_plus_alt2"></i></a>
@@ -175,7 +174,7 @@
                                  <td>234234234</td>
                                  <td>3704897632</td>
                                  <td>3704897632</td>
-                                 <td>Presente</td>
+                                 
                                  <td>
                                   <div class="btn-group">
                                       <a class="btn btn-primary" href="#" title = "Modificar"><i class="icon_plus_alt2"></i></a>
