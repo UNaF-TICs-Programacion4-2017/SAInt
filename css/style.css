@@ -14,7 +14,7 @@
 
 body {
 
-    color: #797979;
+    color: #ffffff;
 
     background: #eeeeee;
 
@@ -31,9 +31,9 @@ body {
 h1,h2,h3,h4,h5{
 
     font-weight: 300;
+     color : #394a59;
 
 }
-
 label{
 
     font-weight: 300;   
@@ -60,7 +60,19 @@ a, a:hover, a:focus {
 
 input:focus, textarea:focus { outline: none; }
 
-table tr th { color: #688a7e;}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+  background-color: #4CAF50;
+  color: #394a59;
+}
+td{
+  border-bottom: 1px solid #ddd;
+  color: #394a59;
+}
+tr:hover{background-color:#f5f5f5}
 
 *:focus {outline: none;}
 
@@ -2287,6 +2299,24 @@ div[data-role="editor-toolbar"] {
 }
 
 .panel .panel-body {
+  
+   border-width: 1px 1px 2px;
+
+  border-style: solid;
+
+  border-top: none;
+
+  border-right-color: #ccc!important;
+
+  border-bottom-color: #ccc!important;
+
+  border-left-color: #ccc!important;
+}
+.panel .panel-form {
+  
+  width: 800px;
+  
+  padding: 15px;
 
   border-width: 1px 1px 2px;
 
@@ -2299,16 +2329,14 @@ div[data-role="editor-toolbar"] {
   border-bottom-color: #ccc!important;
 
   border-left-color: #ccc!important;
-
+  
+  background: #394a59
 }
-
 .panel .panel-body-map {
 
   border-width: 1px 1px 2px;
 
   border-style: solid;
-
-  background:#eef3f7;
 
   height:380px;
 
@@ -2376,7 +2404,7 @@ div[data-role="editor-toolbar"] {
 
   border-radius: 0px;
 
-  
+  align-content: center;
 
   border-top: 1px solid #d4d4d4;
 
@@ -8007,7 +8035,6 @@ ul.amounts li {
     padding-bottom: 15px;
 
     margin-bottom: 15px;
-
 }
 
 

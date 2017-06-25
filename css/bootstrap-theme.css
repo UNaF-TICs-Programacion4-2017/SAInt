@@ -751,6 +751,7 @@ pre code {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  
 }
 .col-xs-1,
 .col-xs-2,
@@ -1554,7 +1555,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 70%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -1598,6 +1599,7 @@ textarea.form-control {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
+  color: #E8E8E8;
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
@@ -1668,7 +1670,7 @@ textarea.input-lg {
 }
 .has-warning .help-block,
 .has-warning .control-label {
-  color: #ffcc00;
+  color: #E8E8E8;
 }
 .has-warning .form-control {
   border-color: #ffcc00;
