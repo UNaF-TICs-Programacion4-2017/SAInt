@@ -99,7 +99,6 @@
                       </a>
                   </li>          
                   <li class="sub-menu">
-                      <!-- <a href="javascript:;" class=""> -->
                         <a class="" href="basic_table.html">
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
@@ -109,7 +108,6 @@
           <!-- sidebar menu end-->
       </aside>
       <!--sidebar end-->
-
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">            
