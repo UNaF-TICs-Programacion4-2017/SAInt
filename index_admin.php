@@ -19,10 +19,10 @@
     <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
 	<link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!-- <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/> -->
     <!-- owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet"> -->
     <!-- Custom styles -->
 	<link rel="stylesheet" href="css/fullcalendar.css">
 	<link href="css/widgets.css" rel="stylesheet">
@@ -190,9 +190,9 @@
 
     <!-- javascripts -->
     <script src="js/jquery.js"></script>
-	<script src="js/jquery-ui-1.10.4.min.js"></script>
     <script src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+	<!-- <script src="js/jquery-ui-1.10.4.min.js"></script> -->
     <!-- bootstrap -->
     <script src="js/bootstrap.min.js"></script>
     <!-- nice scroll -->
