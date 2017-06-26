@@ -110,7 +110,7 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                             DATOS PERSONALES
+                             DATOS DEL TUTOR
                           </header>
                           <div class="panel-form">
                               <form class="form-horizontal" method="get">
@@ -195,14 +195,14 @@
                           </div>
             </section>
             <!-- SIGUIENTE PÁGINA -->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-3">
                         <form action="">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='registar-alumno-pag2.php'">Siguiente</button>  
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='forms-abm/parte-diario.php'">Siguiente</button>  
                         </form>
                     </div>
                 </div>
-            </section>
+ -->            </section>
                       </section>
     <!-- javascripts -->
     <script src="../js/jquery.js"></script>
