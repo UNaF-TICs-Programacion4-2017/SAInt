@@ -1060,11 +1060,8 @@ ul.sidebar-menu li.active a i {
 
     padding: 15px;
 
-    width: 100%;
-
+    width: 100%
 }
-
-
 
 a.logo {
 
@@ -2320,13 +2317,11 @@ div[data-role="editor-toolbar"] {
 }
 .panel .panel-form {
   
-  width: 800px;
+  width: 100%;
   
   padding: 15px;
 
   border-width: 1px 1px 2px;
-
-  border-style: solid;
 
   border-top: none;
 
@@ -2336,7 +2331,7 @@ div[data-role="editor-toolbar"] {
 
   border-left-color: #ccc!important;
   
-  background: #394a59
+  background: #394a59;
 }
 .panel .panel-body-map {
 

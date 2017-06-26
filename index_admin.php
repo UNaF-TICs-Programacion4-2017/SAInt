@@ -112,11 +112,29 @@
       <section id="main-content">
           <section class="wrapper">            
               <!--overview start-->
+              
 			  <div class="row">
 				  <div class="col-lg-12">
 					  <h3 class="page-header"><i class="fa fa-laptop"></i> Detalles de cursos</h3>
 				  </div>
 			  </div>
+
+        <!-- SELECCIONAR CURSO -->
+        <div class="row">
+          <div class="btn-group col-lg-12">
+                  <a class="btn btn-default" href="">Curso</a>
+                  <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href=""><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="" >1°</a></li>
+                        <li><a href="" >2°</a></li>
+                        <li><a href="" >3°</a></li>
+                        <li><a href="">4°</a></li>
+                        <li><a href="">5°</a></li>
+                        <li><a href="">6°</a></li>
+                      </ul>
+              </div>
+        </div>
+        
         <!-- Boton de Parte Diario -->
         <div class="row">
          <div class="col-lg-4">
