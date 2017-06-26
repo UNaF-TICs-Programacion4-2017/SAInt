@@ -113,54 +113,58 @@
           <section class="wrapper">            
               <!--overview start-->
 			  <div class="row">
-				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-laptop"></i> Detalles de cursos</h3>
-					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-						<li><i class="fa fa-laptop"></i> Detalles de cursos</li>						  	
-					</ol>
-				</div>
-			</div>
-              
+				  <div class="col-lg-12">
+					  <h3 class="page-header"><i class="fa fa-laptop"></i> Detalles de cursos</h3>
+				  </div>
+			  </div>
+        <!-- Boton de Parte Diario -->
+        <div class="row">
+         <div class="col-lg-4">
+          <form action="">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='forms-abm/parte-diario.php'">VER PARTE DIARIO</button>  
+            </form>
+          </div>
+        </div>
+        <!-- Iconos
             <div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box blue-bg">
 						<i class="fa fa-cloud-download"></i>
 						<div class="count">6.674</div>
 						<div class="title">Download</div>						
-					</div><!--/.info-box-->			
-				</div><!--/.col-->
+					</div>	
+				</div>
 				
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box brown-bg">
 						<i class="fa fa-shopping-cart"></i>
 						<div class="count">7.538</div>
 						<div class="title">Purchased</div>						
-					</div><!--/.info-box-->			
-				</div><!--/.col-->	
+					</div>
+				</div>
 				
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box dark-bg">
 						<i class="fa fa-thumbs-o-up"></i>
 						<div class="count">4.362</div>
 						<div class="title">Order</div>						
-					</div><!--/.info-box-->			
-				</div><!--/.col-->
+					</div>
+				</div>
 				
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box green-bg">
 						<i class="fa fa-cubes"></i>
 						<div class="count">1.426</div>
 						<div class="title">Stock</div>						
-					</div><!--/.info-box-->			
-				</div><!--/.col-->
-			</div>
+					</div>			
+				</div>
+			</div> -->
             		
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-md-6 portlets">
             <div class="panel panel-default">
 				<div class="panel-heading">
-                  <h2><strong>Calendar</strong></h2>
+                  <h2><strong>Calendario</strong></h2>
 				<div class="panel-actions">
                     <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
                     <a href="#" class="wclose"><i class="fa fa-times"></i></a>
@@ -168,20 +172,12 @@
                 </div><br><br><br>
 
                 <div class="panel-body">
-                  <!-- Widget content -->
-                    <!-- Below line produces calendar. I am using FullCalendar plugin. -->
                     <div id="calendar"></div>
                 </div>
             </div> 
             </div>
-        </div>
+        </div> -->
        	 </section>
-
-          <div class="text-right">
-          <div class="credits">
-                <a>Business Bootstrap Themes</a> by <a>Six Hat Developers</a>
-            </div>
-        </div>
       </section>
       <!--main content end-->
   </section>

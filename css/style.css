@@ -36,13 +36,15 @@ h1,h2,h3,h4,h5{
 }
 label{
 
-    font-weight: 300;   
+    font-weight: 300;
+    color: #ffffff;
 
 }
 
 ul li {
 
     list-style: none;
+    color: #394a59;
 
 }
 
@@ -2446,7 +2448,7 @@ div[data-role="editor-toolbar"] {
 
 .panel.panel-primary .panel-footer {
 
-  background: #5dc3e7;
+  background: #394a59;
 
   color: #092f3d;
 
