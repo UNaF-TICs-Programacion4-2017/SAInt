@@ -1,3 +1,4 @@
+<?php include_once "noreturn.php";?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,7 +77,7 @@
                                 <a href="#"><i class="icon_profile"></i>Perfil</a>
                             </li>
                             <li>
-                                <a href="index.php"><i class="icon_key_alt"></i>Salir</a>
+                                <a href="logout.php"><i class="icon_key_alt"></i>Salir</a>
                             </li>
                         </ul>
                     </li>

@@ -1,5 +1,6 @@
 <?php 
     include_once "consultar.php";
+    include "noreturn.php";
  ?>
 <!DOCTYPE html>
 <html lang="en">
