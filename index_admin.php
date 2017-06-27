@@ -143,6 +143,11 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='forms-abm/parte-diario.php'">VER PARTE DIARIO</button>  
             </form>
           </div>
+          <div class="col-lg-4">
+          <form action="">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='forms-abm/alumno-retirado.php'">REGISTRAR ALUMNO RETIRADO</button>  
+            </form>
+          </div>
         </div>
         <!-- Iconos
             <div class="row">

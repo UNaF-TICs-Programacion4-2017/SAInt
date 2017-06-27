@@ -24,7 +24,7 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style-responsive.css" rel="stylesheet" />
 </head>
-<body><center>
+<body>
     <!--header start-->
     <header class="header dark-bg">
             <div class="toggle-nav">
@@ -212,6 +212,5 @@
     <script src="../js/jquery.nicescroll.js" type="text/javascript"></script>
     <!--custome script for all page-->
     <script src="../js/scripts.js"></script>
-
-</center></body>
+</body>
 </html>

@@ -532,7 +532,7 @@ tr:hover{background-color:#f5f5f5}
 
     position: fixed;
 
-    background: #2a61ae;
+    background: #314479;
 
 }
 
@@ -582,7 +582,7 @@ ul.sidebar-menu {
 
 ul.sidebar-menu li ul.sub li{
 
-    background: #394a59;
+    background: #314479;
 
     margin-bottom: 0;
 
@@ -732,7 +732,7 @@ ul.sidebar-menu li a{
 
 ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
 
-    background: #2a61ae;
+    background: #314479;
 
     color: #fff;
 
@@ -2089,9 +2089,9 @@ div[data-role="editor-toolbar"] {
 
   color : #fff;
 
-  background : #2a61ae;
+  background : #314479;
 
-  background-color : #2a61ae;
+  background-color : #314479;
 
 }
 
@@ -2329,7 +2329,7 @@ div[data-role="editor-toolbar"] {
 
   border-left-color: #ccc!important;
   
-  background: #394a59;
+  background: #314479;
 }
 .panel .panel-body-map {
 
