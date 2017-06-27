@@ -32,7 +32,7 @@
   <link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     
   </head>
-<body><center>
+<body>
   <!-- container section start -->
   <section id="container" class="">
     <!--header start-->
@@ -77,6 +77,9 @@
                             <li>
                                 <a href="../logout.php"><i class="icon_key_alt"></i>Salir</a>
                             </li>
+                            <li>
+                              <input type="color" name="color">
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -85,7 +88,6 @@
             <!-- notificatoin dropdown end-->
     </header>      
     <!--header end-->
-
       <!--sidebar start-->
       <aside>
           <!-- sidebar menu start-->
@@ -142,11 +144,12 @@
                                           <input type="text" class="form-control round-input">
                                       </div>
                                   </div>
+                                  
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Sexo</label>
                                       <div class="btn-group">
                                                   <a class="btn btn-default" href="" title="Bootstrap 3 themes generator">Seleccionar</a>
-                                                  <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="" title="Bootstrap 3 themes generator"><span class="caret"></span></a>
+                                                  <a class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                                   <ul class="dropdown-menu">
                                                     <li><a href="" title="Bootstrap 3 themes generator">Femenino</a></li>
                                                     <li class="divider"></li>
@@ -277,5 +280,5 @@
 
   </script>
 
-</center></body>
+</body>
 </html>
