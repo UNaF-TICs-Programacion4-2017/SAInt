@@ -35,7 +35,7 @@
             </div>
 
             <!--logo start-->
-            <a href="index.html" class="logo">SAInt <span class="lite">Admin</span></a>
+            <a href="../index-admin.php" class="logo">SAInt <span class="lite">Admin</span></a>
             <!--logo end-->
 
             <!--  search form start -->
