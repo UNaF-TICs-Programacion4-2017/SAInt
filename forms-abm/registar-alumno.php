@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal"> -->
-    <link rel="shortcut icon" href="../img/favicon.png">
-	<title>REGISTRO DE ALUMNO</title>
-	 <!-- Bootstrap CSS -->
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+
+    <title>SAInt - Admin</title>
+
+    <!-- Bootstrap CSS -->    
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
     <link href="../css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
     <link href="../css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="../css/font-awesome.min.css" rel="stylesheet" />
-    <!-- date picker -->
-    
-    <!-- color picker -->
-    
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />    
+    <!-- full calendar css-->
+    <link href="../assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+  <link href="../assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <!-- easy pie chart-->
+    <!-- <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/> -->
+    <!-- owl carousel -->
+    <!-- <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+  <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet"> -->
     <!-- Custom styles -->
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <link href="../css/widgets.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style-responsive.css" rel="stylesheet" />
-</head>
+  <link href="../css/xcharts.min.css" rel=" stylesheet"> 
+  <link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    
+  </head>
 <body><center>
+  <!-- container section start -->
+  <section id="container" class="">
     <!--header start-->
     <header class="header dark-bg">
             <div class="toggle-nav">
@@ -65,7 +75,7 @@
                                 <a href="#"><i class="icon_profile"></i>Perfil</a>
                             </li>
                             <li>
-                                <a href="../index.php"><i class="icon_key_alt"></i>Salir</a>
+                                <a href="../logout.php"><i class="icon_key_alt"></i>Salir</a>
                             </li>
                         </ul>
                     </li>
@@ -77,9 +87,9 @@
     <!--header end-->
 
       <!--sidebar start-->
-        <aside>
+      <aside>
+          <!-- sidebar menu start-->
           <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="active">
                       <a class="" href="../index_admin.php">
@@ -92,20 +102,19 @@
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
                         </a>
-                  
               </ul>
-              <!-- sidebar menu end-->
           </div>
+          <!-- sidebar menu end-->
       </aside>
-
+      <!--sidebar end-->
       <!--Comienzo del contenido-->
       <section id="main-content">
           <section class="wrapper">
              <div class="row" >
                 <div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-file-text-o"></i>REGISTO DE NUEVO ALUMNO</h3>
-				</div>
-			</div>
+                    <h3 class="page-header"><i class="fa fa-file-text-o"></i>REGISTO DE NUEVO ALUMNO</h3>
+                </div>
+            </div>
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
@@ -206,12 +215,67 @@
                       </section>
     <!-- javascripts -->
     <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+  <!-- <script src="js/jquery-ui-1.10.4.min.js"></script> -->
+    <!-- bootstrap -->
     <script src="../js/bootstrap.min.js"></script>
     <!-- nice scroll -->
     <script src="../js/jquery.scrollTo.min.js"></script>
     <script src="../js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- custom select -->
+    <script src="../js/jquery.customSelect.min.js" ></script>
+  <script src="../assets/chart-master/Chart.js"></script>
+   
     <!--custome script for all page-->
     <script src="../js/scripts.js"></script>
+  <script>
+
+      //knob
+      $(function() {
+        $(".knob").knob({
+          'draw' : function () { 
+            $(this.i).val(this.cv + '%')
+          }
+        })
+      });
+
+      //carousel
+      $(document).ready(function() {
+          $("#owl-slider").owlCarousel({
+              navigation : true,
+              slideSpeed : 300,
+              paginationSpeed : 400,
+              singleItem : true
+
+          });
+      });
+
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+    
+    /* ---------- Map ---------- */
+  $(function(){
+    $('#map').vectorMap({
+      map: 'world_mill_en',
+      series: {
+        regions: [{
+          values: gdpData,
+          scale: ['#000', '#000'],
+          normalizeFunction: 'polynomial'
+        }]
+      },
+    backgroundColor: '#eef3f7',
+      onLabelShow: function(e, el, code){
+        el.html(el.html()+' (GDP - '+gdpData[code]+')');
+      }
+    });
+  });
+
+  </script>
 
 </center></body>
 </html>

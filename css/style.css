@@ -10,8 +10,6 @@
 
 @import url(line-icons.css);
 
-
-
 body {
 
     color: #f8f8f8;
@@ -1713,7 +1711,7 @@ div[data-role="editor-toolbar"] {
 
 
 
-.top-nav .nav .caret {
+.top-nav .nav .dropdown-menu {
 
     border-bottom-color: #A4AABA;
 
