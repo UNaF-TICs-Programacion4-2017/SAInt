@@ -58,32 +58,12 @@ class Data_Base{
             $Sentencia .= ' LIMIT '.$conditions['limit']; 
         }
         
-        return $this->Consultar_Manual($Sentencia, $conditions); 
+        return $this->Consultar_Manual($Sentencia); 
     }
     
-    public function Consultar_Manual($Sentencia,$conditions = array()){
-	   $consulta = $this->Conection->query($Sentencia);
-		  
-        if(array_key_exists("return_type",$conditions) && $conditions['return_type'] != 'all'){
-            switch($conditions['return_type']){
-                case 'count':
-                    $data = $consulta->rowCount();
-                    break;
-                case 'single':
-                    $data = $consulta;
-                    break;
-                default:
-                    $data = '';
-                }
-		}
-        else{   
-
-			if($consulta->rowCount() > 0){
-		      	$data = $consulta->fetchAll();
-			}
-		}
-		
-        	return !empty($data)?$data:false;
+    public function Consultar_Manual($Sentencia){
+        $consulta = $this->Conection->query($Sentencia);	
+    	return !empty($consulta)?$consulta:false;
 	  }
 	
 
@@ -134,14 +114,17 @@ class Data_Base{
                 $i++;
             }
             if(!empty($conditions)&& is_array($conditions)){
-                $whereSql .= ' WHERE ';
-                $i = 0;
-                foreach($conditions as $key => $value){
-                    $pre = ($i > 0)?' AND ':'';
-                    $whereSql .= $pre.$key." = '".$value."'";
-                    $i++;
+                if(array_key_exists("where",$conditions)){
+                    $whereSql .= ' WHERE ';
+                    $i = 0;
+                    foreach($conditions['where'] as $key => $value){
+                        $pre = ($i > 0)?' AND ':'';
+                        $whereSql .= $pre.$key." = '".$value."'";
+                        $i++;
+                    }
                 }
             }
+
             $Sentencia = "UPDATE ".$table." SET ".$colvalSet.$whereSql;
             $consulta = $this->Conection->prepare($Sentencia);
             $actualizo = $consulta->execute();
@@ -159,15 +142,19 @@ class Data_Base{
      */
     public function Borrar($table,$conditions){
         $whereSql = '';
+
         if(!empty($conditions)&& is_array($conditions)){
-            $whereSql .= ' WHERE ';
-            $i = 0;
-            foreach($conditions as $key => $value){
-                $pre = ($i > 0)?' AND ':'';
-                $whereSql .= $pre.$key." = '".$value."'";
-                $i++;
+                if(array_key_exists("where",$conditions)){
+                    $whereSql .= ' WHERE ';
+                    $i = 0;
+                    foreach($conditions['where'] as $key => $value){
+                        $pre = ($i > 0)?' AND ':'';
+                        $whereSql .= $pre.$key." = '".$value."'";
+                        $i++;
+                    }
+                }
             }
-        }
+
         $Sentencia = "DELETE FROM ".$table.$whereSql;
         $consulta = $this->Conection->prepare($Sentencia);
         $borro = $consulta->execute();

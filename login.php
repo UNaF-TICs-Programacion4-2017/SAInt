@@ -1,16 +1,37 @@
 <?php
-session_start();
+	include_once "session.php";
+
+	if (!isset($_POST['name'])) {
+		 	header("location: index_admin.php");
+	};
+
 	$username = $_POST['name'];
 	$password = $_POST['pwd'];
-	include_once "Conexion.php";
-	$result = mysqli_query($mysqli,$query)or die(mysqli_error());
-	$num_row = mysqli_num_rows($result);
-			$row=mysqli_fetch_array($result);
-			if( $num_row >=1 ) {
-				echo 'true';
-				$_SESSION['user_name']=$row['usu_username'];
+	$filtro = '';
+
+	$filtro = array('where' => array('usu_username' => $_POST['name'],
+									 'usu_password' => $_POST['pwd']
+									 )
+					);
+
+	$Obj_BD->Abrir_Transaccion();
+	$Usuario = $Obj_BD->Consultar_Automatico("tab_usuario", $filtro);
+
+			if( $Usuario->rowCount() >=1 ) {
+
+				foreach ($Usuario as $user){
+
+					if ($user['usu_estado'] == 0){
+
+						echo 'off';
+						$_SESSION['user_name'] = $_POST['name'];
+						
+						$update = array('usu_estado' => 1);
+						$OK = $Obj_BD->Actualizar('tab_usuario', $update, $filtro);
+						$Obj_BD->Confirmar();
+					}
+					else { echo 'on'; }
+				}
 			}
-			else{
-				echo 'false';
-			}
+			else{ echo 'not'; }
 ?>

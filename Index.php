@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +24,11 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-        $("#user_name").focus();
+        $("#nick_user").focus();
          $("#login_form").fadeIn("normal");
 
        $("#login2").click(function(){
-            username=$("#user_name").val();
+            username=$("#nick_user").val();
             password=$("#password").val();
            
              $.ajax({
@@ -35,17 +36,20 @@
                 url: "login.php",
                 data: "name="+username+"&pwd="+password,
                 success: function(html){
-                  if(html=='true')
-                  {
+
+                  if(html=='off'){
                     $("#login_form").fadeOut("normal");
-                     var pagina="index_admin.php"
-                    function redireccionar() {location.href=pagina} 
+
+                    function redireccionar() {location.href="index_admin.php"} 
                     redireccionar();
                     $("#profile").html("<a href='logout.php' id='logout'>Logout</a>");
                   }
-                  else
-                  {
+                  else{
+                      if(html=='on'){
+                        $("#add_err").html("El Usuario ya se encuentra Online");
+                      } else {
                         $("#add_err").html("Usuario o contraseña Incorrecta");
+                      }
                   }
                 },
                 beforeSend:function()
@@ -61,14 +65,8 @@
   </head>
 
   <body class="login-img3-body">
-<?php session_start(); ?>
   <div id="profile">
-      <?php if(isset($_SESSION['usu_username'])){
-      ?>
-      <a href='logout.php' id='logout'>Logout</a>
-    <?php }else {?>
-    
-        <?php } ?>
+
     <div id="login_form" class="container">
 
       <form class="login-form" action="login.php">        
@@ -79,7 +77,7 @@
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Usuario" autofocus>
+              <input type="text" class="form-control" id="nick_user" name="nick_user" placeholder="Usuario" autofocus>
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
@@ -92,19 +90,6 @@
             <button class="btn btn-primary btn-lg btn-block"  type="submit" id="login2">Ingresar</button>
           </div>
       </form>
-    <div class="text-right">
-            <div class="credits">
-                <!-- 
-                    All the links in the footer should remain intact. 
-                    You can delete the links only if you purchased the pro version.
-                    Licensing information: https://bootstrapmade.com/license/
-                    Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-                -->
-                </div>
-        </div>
-    </div>
-
-
   </body>
 
 </html>
