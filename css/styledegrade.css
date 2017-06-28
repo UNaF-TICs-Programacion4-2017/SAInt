@@ -1,0 +1,40 @@
+
+.dark-bg {
+
+  	background: #499bea;
+	background: -moz-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #499bea), color-stop(100%, #314479));
+	background: -webkit-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -o-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -ms-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: linear-gradient(to right, #499bea 0%, #314479 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#314479', GradientType=1 );
+  	background-color : #499bea;
+
+}
+ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+	background: #499bea;
+	background: -moz-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #499bea), color-stop(100%, #314479));
+	background: -webkit-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -o-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -ms-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: linear-gradient(to right, #499bea 0%, #314479 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#314479', GradientType=1 );
+ 
+}
+
+#sidebar {
+
+	background: #499bea;
+	background: -moz-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, #499bea), color-stop(100%, #314479));
+	background: -webkit-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -o-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: -ms-linear-gradient(left, #499bea 0%, #314479 100%);
+	background: linear-gradient(to right, #499bea 0%, #314479 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#314479', GradientType=1 );
+
+}
+
+/*http://www.cssmatic.com/es/gradient-generator#%27\-moz\-linear\-gradient\%28left\%2C\%20rgba\%2873\%2C155\%2C234\%2C1\%29\%200\%25\%2C\%20rgba\%2849\%2C68\%2C121\%2C1\%29\%20100\%25\%29\%3B%27/*
