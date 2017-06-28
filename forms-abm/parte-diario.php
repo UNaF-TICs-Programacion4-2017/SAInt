@@ -34,9 +34,11 @@
   </head>
 
   <body>
-  <!-- container section start -->
   <section id="container" class="">
-  	<!--header start-->
+  	<!--Plantilla general-->
+        <!--Plantilla general-->
+    <!-- <?php //include 'plantilla/plantilla.html'; ?> -->
+    <!--header start-->
     <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
@@ -56,8 +58,6 @@
                     </li>                    
                 </ul>
             </div>
-            <!--  search form end -->                
-
             <!-- notificatoin dropdown start-->
             <div class="top-nav notification-row">                
                 <!-- user login dropdown start -->
@@ -73,7 +73,7 @@
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="../icon_profile"></i>Perfil</a>
+                                <a href="#"><i class="../icon_profile.jpg"></i>Perfil</a>
                             </li>
                             <li>
                                 <a href="../index.php"><i class="icon_key_alt"></i>Salir</a>
@@ -81,9 +81,7 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- user login dropdown end -->
             </div>
-            <!-- notificatoin dropdown end-->
     </header>      
     <!--header end-->
 
@@ -108,7 +106,8 @@
           <!-- sidebar menu end-->
       </aside>
       <!--sidebar end-->
-      <!--main content start-->
+      
+      <!--Inicio de Contenido particular-->
       <section id="main-content">
           <section class="wrapper">
           <div class="row">
