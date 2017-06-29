@@ -185,8 +185,6 @@
     <script src="../js/jquery.nicescroll.js" type="text/javascript"></script>
     <!-- custom select -->
     <script src="../js/jquery.customSelect.min.js" ></script>
-  <script src="../assets/chart-master/Chart.js"></script>
-   
     <!--custome script for all page-->
     <script src="../js/scripts.js"></script>
   <script>
