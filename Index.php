@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+  include_once "session.php";
+  if(!empty($_SESSION['user_name'])) { header("location: index_admin.php"); }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

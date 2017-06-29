@@ -1,4 +1,8 @@
-<?php include_once "noreturn.php";?>
+<?php //Simepre primero estos dos en todas las paginas exepto index
+      include_once "session.php";
+      Comprobar_Login_User($Obj_BD);
+      //Fin comprobacion
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,7 +60,8 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <input class="form-control" placeholder="Buscar" type="text">
+                            <h3> Usuario: <?php echo $_SESSION['user_name'] ." ID: ". $_SESSION['current_id_user']; ?> </h3>
+                            <!-- <input class="form-control" placeholder="Buscar" type="text"> -->
                         </form>
                     </li>                    
                 </ul>
