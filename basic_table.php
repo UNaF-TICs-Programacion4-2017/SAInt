@@ -1,6 +1,6 @@
 <?php //Simepre primero estos dos en todas las paginas exepto index
       include_once "session.php";
-      Comprobar_Login_User($Obj_B);
+      Comprobar_Login_User($Obj_BD);
       //Fin comprobacion
       include_once "consultar.php";
 ?>
