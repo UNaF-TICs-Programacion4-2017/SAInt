@@ -24,7 +24,8 @@
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
-
+    <!-- CSS para el degradado -->
+  <link href="css/styledegrade.css" rel="stylesheet"> 
   </head>
 
   <body>
@@ -45,11 +46,7 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <h3 class = "btn btn-primary"> Usuario: <?php echo $_SESSION['user_name'] ." ID: ". $_SESSION['current_id_user']; ?> </h3>
-                            <!-- LA CLASE QUE USE ARRIBA LA USE PORQUE EL TEXTO NO TIENE COLOR, 
-                            ES DEICR, IMPRIME PERO NO SE VE EN LA BARRA PORQUE TIENE EL MISMO COLOR DEL FONDO -->
-                            
-                            <!-- <input class="form-control" placeholder="Search" type="text"> -->
+                          <!-- <input class="form-control" placeholder="Search" type="text"> -->
                         </form>
                     </li>                    
                 </ul>
@@ -65,7 +62,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Admin</span>
+                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -135,16 +132,9 @@
                                     </ul>
                             </div>
                           <div class="btn-group col-lg-4"> 
-                            <a class="btn btn-primary" href="forms-abm/registar-alumno.php" 
+                            <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.html" 
                               title="Agregar un nuevo alumno">Agregar</a>
                          </div>
-
-
-
-
-
-
-
                           </header>
                           <table class="table table-striped table-advance table-hover">
                            <tbody>

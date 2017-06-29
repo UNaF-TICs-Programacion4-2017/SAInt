@@ -1,3 +1,8 @@
+<?php 
+      //Simepre primero estos dos en todas las paginas exepto index
+      include_once "../session.php";
+      Comprobar_Login_User($Obj_BD);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +35,8 @@
     <link href="../css/style-responsive.css" rel="stylesheet" />
 	<link href="../css/xcharts.min.css" rel=" stylesheet">	
 	<link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-    
+  <!-- CSS para el degradado -->
+  <link href="../css/styledegrade.css" rel="stylesheet"> 
   </head>
 
   <body>
@@ -53,7 +59,7 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <input class="form-control" placeholder="Buscar" type="text">
+                            <!-- <input class="form-control" placeholder="Buscar" type="text"> -->
                         </form>
                     </li>                    
                 </ul>
@@ -67,7 +73,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="../img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Admin</span>
+                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">

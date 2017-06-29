@@ -32,7 +32,9 @@
 	<link rel="stylesheet" href="css/fullcalendar.css">
 	<link href="css/widgets.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/styledegrade.css" rel="stylesheet">
+    <!-- CSS para el degradado -->
+    <link href="css/styledegrade.css" rel="stylesheet"> 
+    <!-- ================================ -->
     <link href="css/style-responsive.css" rel="stylesheet" />
 	<link href="css/xcharts.min.css" rel=" stylesheet">	
 	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
@@ -60,7 +62,6 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <h3> Usuario: <?php echo $_SESSION['user_name'] ." ID: ". $_SESSION['current_id_user']; ?> </h3>
                             <!-- <input class="form-control" placeholder="Buscar" type="text"> -->
                         </form>
                     </li>                    
@@ -75,7 +76,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Admin</span>
+                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
