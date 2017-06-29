@@ -90,7 +90,6 @@ class Data_Base{
             $inserto = $consulta->execute();
 
             return $inserto? $this->Conection->lastInsertId() : false;
-            echo "<h1>fase 5".$inserto."</h1><br>";
         }else{
             return false;
         }
