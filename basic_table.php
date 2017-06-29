@@ -1,7 +1,9 @@
-<?php 
-    include_once "consultar.php";
-    include "noreturn.php";
- ?>
+<?php //Simepre primero estos dos en todas las paginas exepto index
+      include_once "session.php";
+      Comprobar_Login_User($Obj_B);
+      //Fin comprobacion
+      include_once "consultar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,7 +37,7 @@
             </div>
 
             <!--logo start-->
-            <a href="../index-admin.php" class="logo">SAInt <span class="lite">Admin</span></a>
+            <a href="index_admin.php" class="logo">SAInt <span class="lite">Admin</span></a>
             <!--logo end-->
 
             <!--  search form start -->
@@ -43,7 +45,11 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
+                            <h3 class = "btn btn-primary"> Usuario: <?php echo $_SESSION['user_name'] ." ID: ". $_SESSION['current_id_user']; ?> </h3>
+                            <!-- LA CLASE QUE USE ARRIBA LA USE PORQUE EL TEXTO NO TIENE COLOR, 
+                            ES DEICR, IMPRIME PERO NO SE VE EN LA BARRA PORQUE TIENE EL MISMO COLOR DEL FONDO -->
+                            
+                            <!-- <input class="form-control" placeholder="Search" type="text"> -->
                         </form>
                     </li>                    
                 </ul>
@@ -68,7 +74,7 @@
                                 <a href="#"><i class="icon_profile"></i>Perfil</a>
                             </li>
                             <li>
-                                <a href="index.php"><i class="icon_key_alt"></i>Salir</a>
+                                <a href="logout.php"><i class="icon_key_alt"></i>Salir</a>
                             </li>
                         </ul>
                     </li>

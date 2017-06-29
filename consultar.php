@@ -1,9 +1,4 @@
 <?php 
-    include_once "conn_db/conexion.php";
-    include_once "conn_db/data_base.php";
-
-   $Obj_BD = new data_base(Object_Connection());
-
    function Consultar_Alumnos($id_curso){
     $Tablas = "tab_alumno, tab_persona, tab_contacto, tab_tutor, tab_curso";
     $Campos = "tab_alumno.id_alumno, tab_persona.pers_nombre, tab_persona.pers_apellido, tab_contacto.cont_nro_telefono";
@@ -14,11 +9,7 @@
                                        'tab_tutor.rela_persona' => 'id_persona',
                                        'tab_contacto.rela_persona' => 'id_persona')
                     );
-
-    $Obj_BD->Abrir_Transaccion();
-
-    Consultar_Automatico($table,$conditions = array()){
-
+    
     return $Obj_BD->Consultar_Automatico($Tablas, $filtros);
    }
 
