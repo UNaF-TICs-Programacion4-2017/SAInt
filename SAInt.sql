@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2017 a las 20:41:02
+-- Tiempo de generación: 29-06-2017 a las 22:56:54
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -203,8 +203,17 @@ CREATE TABLE `tab_tutor` (
 CREATE TABLE `tab_usuario` (
   `id_usuario` int(10) NOT NULL,
   `usu_username` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `usu_password` varchar(255) COLLATE utf8_spanish_ci NOT NULL
+  `usu_password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `usu_estado` int(11) NOT NULL COMMENT '1=online/0=offline'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tab_usuario`
+--
+
+INSERT INTO `tab_usuario` (`id_usuario`, `usu_username`, `usu_password`, `usu_estado`) VALUES
+(1, 'admin', 'admin', 1),
+(2, 'Griselda Cabeza', 'preceptoria', 0);
 
 --
 -- Índices para tablas volcadas
@@ -386,7 +395,7 @@ ALTER TABLE `tab_tutor`
 -- AUTO_INCREMENT de la tabla `tab_usuario`
 --
 ALTER TABLE `tab_usuario`
-  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --
