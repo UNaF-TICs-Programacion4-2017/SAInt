@@ -154,8 +154,15 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='forms-abm/alumno-retirado.php'">REGISTRAR ALUMNO RETIRADO</button>  
             </form>
           </div>
-        </div>
-        <!-- Iconos
+       
+        </div> 
+             <div class="row">
+                <div id="pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+            </div>
+          
+
+
+               <!-- Iconos
             <div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 					<div class="info-box blue-bg">
@@ -261,6 +268,11 @@
 	<script src="js/jquery.slimscroll.min.js"></script>
   <script>
 
+
+
+
+
+
       //knob
       $(function() {
         $(".knob").knob({
@@ -306,6 +318,10 @@
 	});
 
   </script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="grafico.js"></script>
 
   </body>
 </html>
