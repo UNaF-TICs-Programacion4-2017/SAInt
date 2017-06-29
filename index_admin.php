@@ -155,70 +155,9 @@
             </form>
           </div>
        
-        </div> 
-             <div class="row">
-                <div id="pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-            </div>
-          
-
-
-               <!-- Iconos
-            <div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<div class="info-box blue-bg">
-						<i class="fa fa-cloud-download"></i>
-						<div class="count">6.674</div>
-						<div class="title">Download</div>						
-					</div>	
-				</div>
-				
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<div class="info-box brown-bg">
-						<i class="fa fa-shopping-cart"></i>
-						<div class="count">7.538</div>
-						<div class="title">Purchased</div>						
-					</div>
-				</div>
-				
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<div class="info-box dark-bg">
-						<i class="fa fa-thumbs-o-up"></i>
-						<div class="count">4.362</div>
-						<div class="title">Order</div>						
-					</div>
-				</div>
-				
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-					<div class="info-box green-bg">
-						<i class="fa fa-cubes"></i>
-						<div class="count">1.426</div>
-						<div class="title">Stock</div>						
-					</div>			
-				</div>
-			</div> -->
-            		
-		<!-- <div class="row">
-			<div class="col-md-6 portlets">
-            <div class="panel panel-default">
-				<div class="panel-heading">
-                  <h2><strong>Calendario</strong></h2>
-				<div class="panel-actions">
-                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a> 
-                    <a href="#" class="wclose"><i class="fa fa-times"></i></a>
-                </div>  
-                </div><br><br><br>
-
-                <div class="panel-body">
-                    <div id="calendar"></div>
-                </div>
-            </div> 
-            </div>
-        </div> -->
-        <div>
-          
-
-          
         </div>
+            <div class="col-lg-10">
+            <div id="pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
        	 </section>
       </section>
       <!--main content end-->
@@ -318,10 +257,12 @@
 	});
 
   </script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="grafico.js"></script>
-
+<!-- Grafico de torta de alumno -->
+<!-- Comienzo -->
+<script src="js/grafico-pie/jquery-3.1.1.min.js"></script>
+<script src="js/grafico-pie/highcharts.js"></script>
+<script src="js/grafico-pie/exporting.js"></script>
+<script src="js/grafico-pie/grafico.js"></script>
+<!-- Fin -->
   </body>
 </html>
