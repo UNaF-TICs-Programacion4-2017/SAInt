@@ -2,7 +2,7 @@
       include_once "session.php";
       Comprobar_Login_User($Obj_BD);
       //Fin comprobacion
-      include_once "consultar.php";
+      include_once "db_coloquio.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +128,7 @@
                                     </ul>
                             </div>
                           <div class="btn-group col-lg-4"> 
-                            <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.html" 
+                            <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.php" 
                               title="Agregar un nuevo alumno">Agregar</a>
                          </div>
                           </header>

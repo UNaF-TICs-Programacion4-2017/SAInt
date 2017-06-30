@@ -157,9 +157,16 @@
           </div>
        
         </div>
-            <div class="col-lg-10">
-            <div id="pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-       	 </section>
+
+        <div class="row">
+        <div class="col-lg-3">
+          
+        </div>
+            <div class="col-lg-6" style="">
+            <div id="pie" style="min-width: 610px; height: 400px; max-width: 1200px; margin: 0 auto"></div>
+       	    </div>
+
+         </section>
       </section>
       <!--main content end-->
   </section>
