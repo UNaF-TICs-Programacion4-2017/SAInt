@@ -142,8 +142,9 @@
                       </ul>
               </div>
         </div>
-        
+      </section>
         <!-- Boton de Parte Diario -->
+    <section>            
         <div class="row">
          <div class="col-lg-4">
           <form action="">
@@ -155,7 +156,12 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='forms-abm/alumno-retirado.php'">REGISTRAR ALUMNO RETIRADO</button>  
             </form>
           </div>
-       
+        </div>
+    </section>
+
+      <section class="wrapper">
+        <div class="row">
+          <div class=class="col-lg-6"></div>
         </div>
 
         <div class="row">
