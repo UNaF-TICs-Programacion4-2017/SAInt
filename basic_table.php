@@ -25,14 +25,14 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
     <!-- CSS para el degradado -->
-  <link href="css/styledegrade.css" rel="stylesheet"> 
+  <!-- <link href="css/styledegrade.css" rel="stylesheet">  -->
   </head>
 
   <body>
   <!-- container section start -->
   <section id="container" class="">
       <!--header start-->
-    <header class="header dark-bg">
+        <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
             </div>
@@ -46,18 +46,16 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                          <!-- <input class="form-control" placeholder="Search" type="text"> -->
+                            <!-- <input class="form-control" placeholder="Buscar" type="text"> -->
                         </form>
                     </li>                    
                 </ul>
             </div>
-            <!--  search form end -->                
-
             <!-- notificatoin dropdown start-->
             <div class="top-nav notification-row">                
-                <!-- user login dropdown start-->
+                <!-- user login dropdown start -->
                 <ul class="nav pull-right top-menu">
-                    <li class="dropdown">
+                  <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
@@ -68,7 +66,7 @@
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i>Perfil</a>
+                                <a href="#"><i class="icon_profile.jpg"></i>Perfil</a>
                             </li>
                             <li>
                                 <a href="logout.php"><i class="icon_key_alt"></i>Salir</a>
@@ -76,18 +74,16 @@
                         </ul>
                     </li>
                 </ul>
-                    <!-- user login dropdown end -->
             </div>
-                <!-- notificatoin dropdown end-->
-      </header>      
-      <!--header end-->
+    </header>      
+    <!--header end-->
 
       <!--sidebar start-->
       <aside>
           <!-- sidebar menu start-->
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu">                
-                  <li class="active">
+                  <li class="sub-menu">
                       <a class="" href="index_admin.php">
                           <i class="icon_house_alt"></i>
                           <span>Inicio</span>
@@ -97,7 +93,7 @@
                         <a class="" href="basic_table.php">
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
-                        </a>    
+                        </a>
               </ul>
           </div>
           <!-- sidebar menu end-->

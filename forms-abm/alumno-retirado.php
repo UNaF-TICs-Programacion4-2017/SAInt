@@ -36,7 +36,7 @@
 	<link href="../css/xcharts.min.css" rel=" stylesheet">	
 	<link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
     <!-- CSS para el degradado -->
-  <link href="../css/styledegrade.css" rel="stylesheet"> 
+  <!-- <link href="../css/styledegrade.css" rel="stylesheet">  -->
     
   </head>
 <body>
@@ -94,7 +94,7 @@
           <!-- sidebar menu start-->
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu">                
-                  <li class="active">
+                  <li class="sub-menu">
                       <a class="" href="../index_admin.php">
                           <i class="icon_house_alt"></i>
                           <span>Inicio</span>
@@ -115,7 +115,7 @@
         <section class="wrapper">
              <div class="row" >
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-file-text-o"></i>REGISTRO DE NUEVO ALUMNO</h3>
+                    <h3 class="page-header"><i class="fa fa-file-text-o"></i>REGISTRO DE ALUMNO RETIRADO</h3>
                 </div>
             </div>
               <div class="row">

@@ -25,8 +25,7 @@
     <link href="../css/style-responsive.css" rel="stylesheet" />
 </head>
 <body>
-    <!--header start-->
-    <header class="header dark-bg">
+        <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
             </div>
@@ -40,13 +39,11 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <input class="form-control" placeholder="Buscar" type="text">
+                            <!-- <input class="form-control" placeholder="Buscar" type="text"> -->
                         </form>
                     </li>                    
                 </ul>
             </div>
-            <!--  search form end -->                
-
             <!-- notificatoin dropdown start-->
             <div class="top-nav notification-row">                
                 <!-- user login dropdown start -->
@@ -56,13 +53,13 @@
                             <span class="profile-ava">
                                 <img alt="" src="../img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Admin</span>
+                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i>Perfil</a>
+                                <a href="#"><i class="../icon_profile.jpg"></i>Perfil</a>
                             </li>
                             <li>
                                 <a href="../index.php"><i class="icon_key_alt"></i>Salir</a>
@@ -70,18 +67,16 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- user login dropdown end -->
             </div>
-            <!-- notificatoin dropdown end-->
     </header>      
     <!--header end-->
 
       <!--sidebar start-->
-        <aside>
+      <aside>
+          <!-- sidebar menu start-->
           <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
-                  <li class="active">
+                  <li class="sub-menu">
                       <a class="" href="../index_admin.php">
                           <i class="icon_house_alt"></i>
                           <span>Inicio</span>
@@ -92,12 +87,11 @@
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
                         </a>
-                  
               </ul>
-              <!-- sidebar menu end-->
           </div>
+          <!-- sidebar menu end-->
       </aside>
-
+      <!--sidebar end-->
       <!--Comienzo del contenido-->
       <section id="main-content">
           <section class="wrapper">

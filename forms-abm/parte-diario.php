@@ -36,16 +36,11 @@
 	<link href="../css/xcharts.min.css" rel=" stylesheet">	
 	<link href="../css/jquery-ui-1.10.4.min.css" rel="stylesheet">
   <!-- CSS para el degradado -->
-  <link href="../css/styledegrade.css" rel="stylesheet"> 
+  <!-- <link href="../css/styledegrade.css" rel="stylesheet">  -->
   </head>
 
   <body>
-  <section id="container" class="">
-  	<!--Plantilla general-->
-        <!--Plantilla general-->
-    <!-- <?php //include 'plantilla/plantilla.html'; ?> -->
-    <!--header start-->
-    <header class="header dark-bg">
+      <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
             </div>
@@ -96,7 +91,7 @@
           <!-- sidebar menu start-->
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu">                
-                  <li class="active">
+                  <li class="sub-menu">
                       <a class="" href="../index_admin.php">
                           <i class="icon_house_alt"></i>
                           <span>Inicio</span>

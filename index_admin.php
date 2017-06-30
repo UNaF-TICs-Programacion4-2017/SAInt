@@ -33,7 +33,7 @@
 	<link href="css/widgets.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- CSS para el degradado -->
-    <link href="css/styledegrade.css" rel="stylesheet"> 
+    <!-- <link href="css/styledegrade.css" rel="stylesheet">  -->
     <!-- ================================ -->
     <link href="css/style-responsive.css" rel="stylesheet" />
 	<link href="css/xcharts.min.css" rel=" stylesheet">	
@@ -99,7 +99,7 @@
           <!-- sidebar menu start-->
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu">                
-                  <li class="active">
+                  <li class="sub-menu">
                       <a class="" href="index_admin.php">
                           <i class="icon_house_alt"></i>
                           <span>Inicio</span>
