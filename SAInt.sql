@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-06-2017 a las 02:24:08
+-- Tiempo de generación: 30-06-2017 a las 20:07:05
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 7.1.1
 
@@ -273,7 +273,7 @@ CREATE TABLE `tab_usuario` (
   `id_usuario` int(10) NOT NULL,
   `usu_username` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `usu_password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `usu_estado` int(11) NOT NULL COMMENT '1 = Online | 0 = Offline'
+  `usu_estado` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL COMMENT 'Nombre de la maquina'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -281,8 +281,7 @@ CREATE TABLE `tab_usuario` (
 --
 
 INSERT INTO `tab_usuario` (`id_usuario`, `usu_username`, `usu_password`, `usu_estado`) VALUES
-(1, 'admin', 'admin', 1),
-(11, 'SnGa089', 'delceroalnueve', 0);
+(12, 'admin', 'admin', 'Notebook-PC');
 
 --
 -- Índices para tablas volcadas
@@ -445,7 +444,7 @@ ALTER TABLE `tab_materia_curso`
 -- AUTO_INCREMENT de la tabla `tab_nfc_temp`
 --
 ALTER TABLE `tab_nfc_temp`
-  MODIFY `id_nfc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_nfc` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tab_persona`
 --
@@ -475,7 +474,7 @@ ALTER TABLE `tab_tutor`
 -- AUTO_INCREMENT de la tabla `tab_usuario`
 --
 ALTER TABLE `tab_usuario`
-  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Restricciones para tablas volcadas
 --

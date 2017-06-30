@@ -1,5 +1,6 @@
 <?php
   include_once "session.php";
+  Reanudar_Session($Obj_BD);
   if(!empty($_SESSION['user_name'])) { header("location: index_admin.php"); }
  ?>
 <!DOCTYPE html>
