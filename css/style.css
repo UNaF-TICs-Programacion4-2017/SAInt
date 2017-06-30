@@ -1066,15 +1066,13 @@ ul.sidebar-menu li.active a i {
 
 a.logo {
 
-    font-size: 22px;
+    font-size: 30px;
 
-    font-weight: 300;
-
-    color: #ff5733;
+    color: #ffffff;
 
     float: left;
 
-    margin-top: 15px;
+    margin-top: 10px;
 
     text-transform: uppercase;
 

@@ -1,15 +1,9 @@
-<<<<<<< HEAD:forms-abm/asistencia-coloquio.html
-<?php 
-      //Simepre primero estos dos en todas las paginas exepto index
-      include_once "../session.php";
-      Comprobar_Login_User($Obj_BD);
-=======
 <?php //Simepre primero estos dos en todas las paginas exepto index
       include_once "../session.php";
       Comprobar_Login_User($Obj_BD);
       include_once "../db_coloquio.php";
       //Fin comprobacion
->>>>>>> 077ccf4f71e70b29508c263553c8c8ad616bbaa0:forms-abm/asistencia-coloquio.php
+// >>>>>>> 077ccf4f71e70b29508c263553c8c8ad616bbaa0:forms-abm/asistencia-coloquio.php
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,11 +54,7 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-<<<<<<< HEAD:forms-abm/asistencia-coloquio.html
-                            <!-- <input class="form-control" placeholder="Buscar" type="text"> -->
-=======
                             <span class="username"><?php echo $_SESSION['user_name']; ?></span>
->>>>>>> 077ccf4f71e70b29508c263553c8c8ad616bbaa0:forms-abm/asistencia-coloquio.php
                         </form>
                     </li>                    
                 </ul>
@@ -78,8 +68,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="../img/avatar1_small.jpg">
                             </span>
-                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
-                            <b class="caret"></b>
+                            
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
@@ -167,16 +156,14 @@
                                           </select>
                                       </div>
                                   </div>
-
+                          </div>
                       </section>
-                          <div class="btn-group col-lg-4"> 
-<<<<<<< HEAD:forms-abm/asistencia-coloquio.html
-                            <a class="btn btn-primary" href="" title="Agregar un nuevo participante">Registrar</a>
-=======
-                            <input type = "submit" class="btn btn-primary" title="Agregar un nuevo participante" value="Registrar">Registrar</a>
+                        <div class="btn-group col-lg-4" style="padding-left: 100px; width: 230px; padding-right: 30px;"> 
+                         <input type = "submit" class="btn btn-primary" title="Agregar un nuevo participante" value="Registrar" style="padding-right: 40px; padding-left: 40px;">
+                        </div>
                             </form>
->>>>>>> 077ccf4f71e70b29508c263553c8c8ad616bbaa0:forms-abm/asistencia-coloquio.php
-                         </div>
+                  </div>
+              </div>
           </section>
       </section>
     <!-- javascripts -->
