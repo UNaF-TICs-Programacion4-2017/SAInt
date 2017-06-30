@@ -135,69 +135,32 @@
                           <table class="table table-striped table-advance table-hover">
                            <tbody>
                               <tr>
-                                 <th><i class="icon_profile"></i> Apellido y Nombre</th>
-                                 <th></i> DNI</th>
+                                 <th><i class="icon_profile"></i> Apellido</th>
+                                 <th><i class="icon_profile"></i> Nombre</th>
                                  <th><i class="icon_mobile"></i> Telefono</th>
-                                 <th><i class="icon_mobile"></i>Telefono Tutor</th>
-                                 <th><i class="icon_cogs"></i>Accion</th>
+                                 <th><i class="icon_mobile"></i> Identificador NFC</th>
+                                 <th><i class="icon_cogs"></i> Accion</th>
                               </tr>
-                              <tr>
-                                 <td>Angeline Mcclain</td>
-                                 <td>234234234</td>
-                                 <td>3704897632</td>
-                                 <td>3704897632</td>
-                                 
-                                 <td>
+                              <?php 
+                                  $extradio_DB = Rellenar_Tabla($Obj_BD);
+                                  foreach ($extradio_DB as $row) {
+                                    echo "<tr>";
+                                    echo "<td>".$row['pers_apellido']."</td>";
+                                    echo "<td>".$row['pers_nombre']."</td>";
+                                    echo "<td>".$row['cont_nro_telefono']."</td>";
+                                    echo "<td>".$row['alum_nfc']."</td>";
+                                    ?>
+                                    <td>
                                   <div class="btn-group">
-                                      <a class="btn btn-primary" href="forms-abm\registar-alumno.php" title = "Modificar"><i class="icon_plus_alt2"></i></a>
+                                      <a class="btn btn-primary" href= <?php echo 'forms-abm\registar-alumno.php?id='.$row['id_persona']; ?> 
+                                         title = "Modificar"><i class="icon_plus_alt2"></i></a>
                                       
                                       <a class="btn btn-danger" href="" title = "Eliminar"><i class="icon_close_alt2"></i></a>
                                   </div>
                                   </td>
-                              </tr>
-                              <tr>
-                                 <td>Sung Carlson</td>
-                                 <td>234234234</td>
-                                 <td>3704897632</td>
-                                 <td>3704897632</td>
-                                
-                                 <td>
-                                  <div class="btn-group">
-                                      <a class="btn btn-primary" href="#" title = "Modificar"><i class="icon_plus_alt2"></i></a>
-                                      
-                                      <a class="btn btn-danger" href="#" title="Eliminar"><i class="icon_close_alt2"></i></a>
-                                  </div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                 <td>Bryon Osborne</td>
-                                 <td>234234234</td>
-                                 <td>3704897632</td>
-                                 <td>3704897632</td>
-                                 
-                                 <td>
-                                 <div class="btn-group">
-                                      <a class="btn btn-primary" href="#" title = "Modificar"><i class="icon_plus_alt2"></i></a>
-                                      
-                                      <a class="btn btn-danger" href="#" title="Eliminar"><i class="icon_close_alt2"></i></a>
-                                  </div>
-                                  </td>
-                              </tr>
-                              <tr>
-                                 <td>Dalia Marquez</td>
-                                 <td>234234234</td>
-                                 <td>3704897632</td>
-                                 <td>3704897632</td>
-                                 
-                                 <td>
-                                  <div class="btn-group">
-                                      <a class="btn btn-primary" href="#" title = "Modificar"><i class="icon_plus_alt2"></i></a>
-                                      
-                                      <a class="btn btn-danger" href="#" title="Eliminar"><i class="icon_close_alt2"></i></a>
-                                  </div>
-                                  </td>
-                              </tr>
-                                              
+                                  <?php echo "</tr>";
+                                  } ?>
+                               ?>             
                            </tbody>
                         </table>
                       </section>

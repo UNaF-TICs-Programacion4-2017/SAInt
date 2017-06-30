@@ -125,28 +125,28 @@
                               <form class="form-horizontal" name = "Formulario" method="post" action = "../db_coloquio.php">
                               
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nombre</label>
+                                      <label class="col-sm-2 control-label" color = "#E8E8E8">Nombre</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input" name = "nombre">
+                                          <input type="text" class="form-control round-input" name = "nombre" required>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label" color = "#E8E8E8">Apellido</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input" name = "apellido">
+                                          <input type="text" class="form-control round-input" name = "apellido" required>
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Teléfono</label>
+                                      <label class="col-sm-2 control-label" color = "#E8E8E8">Teléfono</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input" name = "telefono">
+                                          <input type="text" class="form-control round-input" name = "telefono" required>
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">NFC</label>
                                       <div class="btn-group">
-                                          <select name = "value_nfc" class="btn btn-default dropdown-toggle">
+                                          <select name = "value_nfc" class="btn btn-default dropdown-toggle" required>
                                           <?php
                                               $extraido_DB = Cargar_Combo_NFC($Obj_BD);
                                               foreach ($extraido_DB as $row){
