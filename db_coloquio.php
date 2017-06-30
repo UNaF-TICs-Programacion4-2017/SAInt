@@ -5,12 +5,10 @@
 		$Obj_BD->Abrir_Transaccion();
 
 		$Tablas = "tab_alumno, tab_persona, tab_contacto";
-		$Campos = "tab_alumno.id_alumno, tab_persona.pers_nombre, tab_persona.pers_apellido, tab_contacto.cont_nro_telefono, tab_alumno.alum_nfc";
-		
-		$filtros = array('select' => "$Campos",
-                     'where' => array('tab_alumno.rela_persona' => 'id_persona',
-                                      'tab_contacto.rela_persona' => 'id_persona'));
-    return $Obj_BD->Consultar_Automatico($Tablas, $filtros);
+		$Campos = "tab_persona.id_persona, tab_persona.pers_nombre, tab_persona.pers_apellido, 
+				   tab_contacto.cont_nro_telefono, tab_alumno.alum_nfc";
+		$Sentencia = "SELECT ".$Campos." FROM ".$Tablas." WHERE tab_alumno.rela_persona = id_persona AND tab_contacto.rela_persona = id_persona";
+    	return $Obj_BD->Consultar_Manual($Sentencia);
 	}
 
 	function Insertar($datos = array(), $Obj_BD){
@@ -50,8 +48,14 @@
 
 	function Cargar_Combo_NFC($Obj_BD){ //LISTA DE NFC
 		$Obj_BD->Abrir_Transaccion();
-		$sentencia = "SELECT * FROM tab_nfc_temp ORDER BY nfc_fecha_hora desc";
-		return $Obj_BD->Consultar_Manual($sentencia);
+		$Sentencia = "SELECT * FROM tab_nfc_temp ORDER BY nfc_fecha_hora desc";
+		return $Obj_BD->Consultar_Manual($Sentencia);
+	}
+
+	function Recuperar_Alumno($Obj_BD, $id){
+		$Obj_BD->Abrir_Transaccion();
+		$Sentencia = "SELECT pers_nombre, pers_apellido FROM tab_persona where id_persona = '".$id."'";
+		return $Obj_BD->Consultar_Manual($Sentencia);
 	}
 
 	if (isset($_POST['value_nfc'])){
