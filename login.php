@@ -14,12 +14,12 @@
 
 			if( $Usuario->rowCount() == 1 ) {
 				foreach ($Usuario as $user){
-					if ($user['usu_estado'] == 0){
+					if ($user['usu_estado'] == NULL){
 						echo 'off';
 						$_SESSION['user_name'] = $user['usu_username'];
 						$_SESSION['current_id_user'] = $user['id_usuario'];
 						
-						$update = array('usu_estado' => 1);
+						$update = array('usu_estado' => gethostbyaddr($_SERVER['REMOTE_ADDR']));
 						$OK = $Obj_BD->Actualizar('tab_usuario', $update, $filtro);
 						$Obj_BD->Confirmar();
 					}
