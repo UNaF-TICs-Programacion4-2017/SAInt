@@ -1,3 +1,9 @@
+<?php //Simepre primero estos dos en todas las paginas exepto index
+      include_once "../session.php";
+      Comprobar_Login_User($Obj_BD);
+      include_once "../db_coloquio.php";
+      //Fin comprobacion
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +56,7 @@
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
-                            <input class="form-control" placeholder="Buscar" type="text">
+                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
                         </form>
                     </li>                    
                 </ul>
@@ -125,42 +131,45 @@
                              DATOS DE PARTICIPANTE
                           </header>
                           <div class="panel-form">
-                              <form class="form-horizontal" method="get">
+                              <form class="form-horizontal" name = "Formulario" method="post" action = "../db_coloquio.php">
                               
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nombre</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" class="form-control round-input" name = "nombre">
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label" color = "#E8E8E8">Apellido</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" class="form-control round-input" name = "apellido">
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Teléfono</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" class="form-control round-input" name = "telefono">
                                       </div>
                                   </div>
                                   
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">NFC</label>
                                       <div class="btn-group">
-                                          <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"> Lista de NFC <span class="caret"></span> </button>
-                                          <ul class="dropdown-menu">
-                                              <li><a href="#"></a></li>
-                                              <li><a href="#"></a></li>
-                                              <li><a href="#"></a></li>
-                                          </ul>
+                                          <select name = "value_nfc" class="btn btn-default dropdown-toggle">
+                                          <?php
+                                              $extraido_DB = Cargar_Combo_NFC($Obj_BD);
+                                              foreach ($extraido_DB as $row){
+                                                  echo "<option value='".$row['nfc_indent']."'>".$row['nfc_fecha_hora']."</option>";
+                                              }
+                                           ?>
+                                          </select>
                                       </div>
                                   </div>
 
                       </section>
                           <div class="btn-group col-lg-4"> 
-                            <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.html" title="Agregar un nuevo participante">Registrar</a>
+                            <input type = "submit" class="btn btn-primary" title="Agregar un nuevo participante" value="Registrar">Registrar</a>
+                            </form>
                          </div>
           </section>
       </section>
