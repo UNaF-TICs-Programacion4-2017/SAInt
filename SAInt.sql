@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2017 a las 22:56:54
+-- Tiempo de generación: 30-06-2017 a las 02:24:08
 -- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Versión de PHP: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,6 +33,15 @@ CREATE TABLE `tab_alumno` (
   `rela_tutor` int(10) NOT NULL,
   `rela_curso` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tab_alumno`
+--
+
+INSERT INTO `tab_alumno` (`id_alumno`, `alum_nfc`, `rela_persona`, `rela_tutor`, `rela_curso`) VALUES
+(2, 'seba_el_mas_kpo', 6, 1, 1),
+(3, 'seba_el_mas_kpo', 7, 1, 1),
+(4, 'hola_amigos_de_youtu', 8, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -63,6 +72,16 @@ CREATE TABLE `tab_contacto` (
   `rela_persona` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tab_contacto`
+--
+
+INSERT INTO `tab_contacto` (`id_contacto`, `cont_descripcion`, `cont_nro_telefono`, `rela_persona`) VALUES
+(1, 0, 2147483647, 5),
+(2, 0, 2147483647, 6),
+(3, 0, 2147483647, 7),
+(4, 0, 2147483647, 8);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +95,13 @@ CREATE TABLE `tab_curso` (
   `curs_turno` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `rela_preceptor` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tab_curso`
+--
+
+INSERT INTO `tab_curso` (`id_curso`, `curs_año`, `curs_division`, `curs_turno`, `rela_preceptor`) VALUES
+(1, '3ro tic', 'te debo', 'tarde', 1);
 
 -- --------------------------------------------------------
 
@@ -105,6 +131,13 @@ CREATE TABLE `tab_direccion` (
   `dir_casa` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tab_direccion`
+--
+
+INSERT INTO `tab_direccion` (`id_direccion`, `dir_provincia`, `dir_localidad`, `dir_barrio`, `dir_calle`, `dir_manzana`, `dir_casa`) VALUES
+(1, 'formosa', 'formosa', 'unaf', 'gutnisky', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +164,18 @@ CREATE TABLE `tab_materia_curso` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tab_nfc_temp`
+--
+
+CREATE TABLE `tab_nfc_temp` (
+  `id_nfc` int(11) NOT NULL,
+  `nfc_indent` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `nfc_fecha_hora` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tab_persona`
 --
 
@@ -144,6 +189,16 @@ CREATE TABLE `tab_persona` (
   `rela_direccion` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tab_persona`
+--
+
+INSERT INTO `tab_persona` (`id_persona`, `pers_nombre`, `pers_apellido`, `pers_dni`, `pers_sexo`, `pers_nacionalidad`, `rela_direccion`) VALUES
+(5, 'Sebastian', 'Gamarra', 12345, 0, 'argentina', 1),
+(6, 'Sebastian', 'Gamarra', 12345, 0, 'argentina', 1),
+(7, 'Sebastian', 'Gamarra', 12345, 0, 'argentina', 1),
+(8, 'Cosme', 'Fulan ito', 12345, 0, 'argentina', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -156,6 +211,13 @@ CREATE TABLE `tab_preceptor` (
   `prec_profesion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `rela_persona` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tab_preceptor`
+--
+
+INSERT INTO `tab_preceptor` (`id_preceptor`, `prec_password`, `prec_profesion`, `rela_persona`) VALUES
+(1, 'delceroalnueve', 'gobernador del mundo', 5);
 
 -- --------------------------------------------------------
 
@@ -194,6 +256,13 @@ CREATE TABLE `tab_tutor` (
   `rela_persona` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `tab_tutor`
+--
+
+INSERT INTO `tab_tutor` (`id_tutor`, `tutor_tutelatotal`, `rela_persona`) VALUES
+(1, 2, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -204,7 +273,7 @@ CREATE TABLE `tab_usuario` (
   `id_usuario` int(10) NOT NULL,
   `usu_username` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `usu_password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `usu_estado` int(11) NOT NULL COMMENT '1=online/0=offline'
+  `usu_estado` int(11) NOT NULL COMMENT '1 = Online | 0 = Offline'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -213,7 +282,7 @@ CREATE TABLE `tab_usuario` (
 
 INSERT INTO `tab_usuario` (`id_usuario`, `usu_username`, `usu_password`, `usu_estado`) VALUES
 (1, 'admin', 'admin', 1),
-(2, 'Griselda Cabeza', 'preceptoria', 0);
+(11, 'SnGa089', 'delceroalnueve', 0);
 
 --
 -- Índices para tablas volcadas
@@ -281,6 +350,12 @@ ALTER TABLE `tab_materia_curso`
   ADD KEY `rela_curso` (`rela_curso`);
 
 --
+-- Indices de la tabla `tab_nfc_temp`
+--
+ALTER TABLE `tab_nfc_temp`
+  ADD PRIMARY KEY (`id_nfc`);
+
+--
 -- Indices de la tabla `tab_persona`
 --
 ALTER TABLE `tab_persona`
@@ -330,7 +405,7 @@ ALTER TABLE `tab_usuario`
 -- AUTO_INCREMENT de la tabla `tab_alumno`
 --
 ALTER TABLE `tab_alumno`
-  MODIFY `id_alumno` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alumno` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tab_asistencia`
 --
@@ -340,12 +415,12 @@ ALTER TABLE `tab_asistencia`
 -- AUTO_INCREMENT de la tabla `tab_contacto`
 --
 ALTER TABLE `tab_contacto`
-  MODIFY `id_contacto` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contacto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tab_curso`
 --
 ALTER TABLE `tab_curso`
-  MODIFY `id_curso` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_curso` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tab_curso_profe`
 --
@@ -355,7 +430,7 @@ ALTER TABLE `tab_curso_profe`
 -- AUTO_INCREMENT de la tabla `tab_direccion`
 --
 ALTER TABLE `tab_direccion`
-  MODIFY `id_direccion` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_direccion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tab_materia`
 --
@@ -367,15 +442,20 @@ ALTER TABLE `tab_materia`
 ALTER TABLE `tab_materia_curso`
   MODIFY `id_materia_curso` int(10) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `tab_nfc_temp`
+--
+ALTER TABLE `tab_nfc_temp`
+  MODIFY `id_nfc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT de la tabla `tab_persona`
 --
 ALTER TABLE `tab_persona`
-  MODIFY `id_persona` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_persona` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `tab_preceptor`
 --
 ALTER TABLE `tab_preceptor`
-  MODIFY `id_preceptor` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_preceptor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tab_profesor`
 --
@@ -390,12 +470,12 @@ ALTER TABLE `tab_profe_materia`
 -- AUTO_INCREMENT de la tabla `tab_tutor`
 --
 ALTER TABLE `tab_tutor`
-  MODIFY `id_tutor` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tutor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tab_usuario`
 --
 ALTER TABLE `tab_usuario`
-  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Restricciones para tablas volcadas
 --
