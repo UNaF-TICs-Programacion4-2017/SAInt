@@ -121,18 +121,10 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                            <div class="btn-group col-lg-2" style="padding-right: 1px;width: 116px;">
-                                     <a class="btn btn-default">Curso</a>
-                                     <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href=""><span class="caret"></span></a>
-                                     <ul class="dropdown-menu">
-                                      <li><a href="" >1°</a></li>
-                                      <li><a href="" >2°</a></li>
-                                      <li><a href="" >3°</a></li>
-                                      <li><a href="">4°</a></li>
-                                      <li><a href="">5°</a></li>
-                                      <li><a href="">6°</a></li>
-                                    </ul>
-                            </div>
+                               <div class="btn-group col-lg-4">
+                                    <select name = "value_nfc" class="btn btn-default dropdown-toggle">
+                                    </select>
+                                </div>
                           <div class="btn-group col-lg-4"> 
                             <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.php" 
                               title="Agregar un nuevo alumno">Agregar</a>
