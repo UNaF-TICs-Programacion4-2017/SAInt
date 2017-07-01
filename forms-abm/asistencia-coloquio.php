@@ -158,7 +158,7 @@
                                   </div>
                           </div>
                       </section>
-                        <div class="btn-group col-lg-4" style="padding-left: 50px; width: 230px; padding-right: 30px;"> 
+                        <div class="btn-group col-lg-4" style="padding-left: 100px; width: 230px; padding-right: 30px;"> 
                          <input type = "submit" class="btn btn-primary" title="Agregar un nuevo participante" value="Registrar" style="padding-right: 40px; padding-left: 40px;">
                         </div>
                             </form>
