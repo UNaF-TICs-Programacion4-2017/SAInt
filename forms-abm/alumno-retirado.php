@@ -127,25 +127,25 @@
                           <div class="panel-form">
                               <form class="form-horizontal" method="get">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label"> Nombre </label>
+                                      <label class="col-sm-2 control-label" style="font-size:large;"> Nombre </label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control round-input">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label" color = "#E8E8E8"> Apellido </label>
+                                      <label class="col-sm-2 control-label" style="font-size:large;"> Apellido </label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control round-input">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label"> Motivo </label>
+                                      <label class="col-sm-2 control-label" style="font-size:large;"> Motivo </label>
                                                   <div class="col-sm-10">
                                                       <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
                                                   </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="control-label col-lg-2" for="inputSuccess"> Certificado </label>
+                                      <label class="control-label col-lg-2" for="inputSuccess" style="font-size:large;"> Certificado </label>
                                       <div class="col-lg-10">
                                           <label class="checkbox-inline">
                                               <input type="checkbox" id="inlineCheckbox1" value="si"> Si
@@ -156,7 +156,7 @@
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label" color = "#E8E8E8"> Retirado Por </label>
+                                      <label class="col-sm-2 control-label" style="font-size:large;"> Retirado Por </label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control round-input">
                                       </div>

@@ -672,7 +672,7 @@ pre code {
   clear: both;
 }
 .row {
-  margin-left: -15px;
+  margin-left: 5px;
   margin-right: -15px;
 }
 .row:before,
@@ -1144,7 +1144,7 @@ pre code {
     width: 25%;
   }
   .col-lg-4 {
-    width: 33.33333333333333%;
+    /*width: 33.33333333333333%;*/
   }
   .col-lg-5 {
     width: 41.66666666666667%;
@@ -1796,7 +1796,7 @@ textarea.input-lg {
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
-    text-align: right;
+    text-align: center;
   }
 }
 .btn {
