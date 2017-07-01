@@ -144,21 +144,24 @@
                                   </div>
                                   
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">NFC</label>
+                                      <label class="col-sm-4 control-label">NFC</label>
                                       <div class="btn-group">
                                           <select name = "value_nfc" class="btn btn-default dropdown-toggle" required>
                                           <?php
                                               $extraido_DB = Cargar_Combo_NFC($Obj_BD);
-                                              foreach ($extraido_DB as $row){
+                                              $count = $extraido_DB->rowCount();
+                                              if ($count != 0){
+                                                foreach ($extraido_DB as $row){
                                                   echo "<option value='".$row['nfc_indent']."'>".$row['nfc_fecha_hora']."</option>";
-                                              }
+                                                }
+                                              } else { $mensaje = "No hay Identificadores NFC disponibles"; }
                                            ?>
-                                          </select>
-                                      </div>
+                                          </select> <label class="control-label" ><?php if ($count == 0){ echo $mensaje; } ?></label>
+                                      </div> 
                                   </div>
                           </div>
                       </section>
-                        <div class="btn-group col-lg-4" style="padding-left: 100px; width: 230px; padding-right: 30px;"> 
+                        <div class="btn-group col-lg-4" style="padding-left: 100px; width: 230px; padding-right: 30px; "> 
                          <input type = "submit" class="btn btn-primary" title="Agregar un nuevo participante" value="Registrar" style="padding-right: 40px; padding-left: 40px;">
                         </div>
                             </form>

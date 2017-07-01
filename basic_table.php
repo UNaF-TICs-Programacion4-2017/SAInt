@@ -3,6 +3,12 @@
       Comprobar_Login_User($Obj_BD);
       //Fin comprobacion
       include_once "db_coloquio.php";
+
+      $id = isset($_GET['id'])? intval($_GET['id']) : Null;
+      if ($id != NULL){
+        //Eliminar($Obj_BD, $id);
+        //header("location: basic_table.php");
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -155,7 +161,8 @@
                                       <a class="btn btn-primary" href= <?php echo 'forms-abm\registar-alumno.php?id='.$row['id_persona']; ?> 
                                          title = "Modificar"><i class="icon_plus_alt2"></i></a>
                                       
-                                      <a class="btn btn-danger" href="" title = "Eliminar"><i class="icon_close_alt2"></i></a>
+                                      <a class="btn btn-danger" href= <?php echo 'basic_table.php?id='.$row['id_persona']; ?>
+                                         title = "Eliminar"><i class="icon_close_alt2"></i></a>
                                   </div>
                                   </td>
                                   <?php echo "</tr>";
