@@ -1,3 +1,19 @@
+<?php //Simepre primero estos dos en todas las paginas exepto index
+      include_once "../session.php";
+      Comprobar_Login_User($Obj_BD);
+      //Fin comprobacion
+      include_once "../db_coloquio.php";
+      $nombre = "";
+      $apellido = "";
+      $id = isset($_GET['id'])? intval($_GET['id']) : null;
+      $datos = Recuperar_Alumno($Obj_BD, $id);
+      foreach ($datos as $key) {
+        $nombre = $key['pers_nombre'];
+        $apellido = $key['pers_apellido'];
+      }
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,13 +136,13 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nombre</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" class="form-control round-input" value = <?php echo "'".$nombre."'"; ?> >
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label" color = "#E8E8E8">Apellido</label>
+                                      <label class="col-sm-2 control-label">Apellido</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" class="form-control round-input" value = <?php echo "'".$apellido."'"; ?> >
                                       </div>
                                   </div>
                                   <div class="form-group">

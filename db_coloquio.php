@@ -46,6 +46,23 @@
 		$Obj_BD->Confirmar();
 	}
 
+	function Eliminar($Obj_BD, $id){
+		$Obj_BD->Abrir_Transaccion(); //ELIMINO LA PERSONA
+		$borrar = array('where' => array('id_persona' => $id));
+		$OK = $Obj_BD->Borrar('tab_persona',$borrar);
+		$Obj_BD->Confirmar();
+
+		$Obj_BD->Abrir_Transaccion(); //ELIMINO SU TELEFONO
+		$borrar = array('where' => array('rela_persona' => $id));
+		$OK = $Obj_BD->borrar('tab_contacto',$borrar);
+		$Obj_BD->Confirmar();
+
+		$Obj_BD->Abrir_Transaccion(); // ELIMINO SU NFC
+		$borrar = array('where' => array('rela_persona' => $id));
+		$OK = $Obj_BD->borrar('tab_alumno',$borrar);
+		$Obj_BD->Confirmar();
+	}
+
 	function Cargar_Combo_NFC($Obj_BD){ //LISTA DE NFC
 		$Obj_BD->Abrir_Transaccion();
 		$Sentencia = "SELECT * FROM tab_nfc_temp ORDER BY nfc_fecha_hora desc";
