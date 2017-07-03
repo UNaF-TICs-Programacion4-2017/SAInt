@@ -22,9 +22,6 @@
     <!-- font icon -->
     <link href="../css/elegant-icons-style.css" rel="stylesheet" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" />    
-    <!-- full calendar css-->
-    <link href="../assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-  <link href="../assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
     <!-- easy pie chart-->
     <!-- <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/> -->
     <!-- owl carousel -->
@@ -32,7 +29,6 @@
   <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet"> -->
     <!-- Custom styles -->
   <link rel="stylesheet" href="../css/fullcalendar.css">
-  <link href="../css/widgets.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style-responsive.css" rel="stylesheet" />
   <link href="../css/xcharts.min.css" rel=" stylesheet"> 
@@ -48,17 +44,6 @@
             <!--logo start-->
             <a href="../index_admin.php" class="logo">SAInt <span class="lite">Admin</span></a>
             <!--logo end-->
-
-            <!--  search form start -->
-            <div class="nav search-row" id="top_menu">
-                <ul class="nav top-menu">                    
-                    <li>
-                        <form class="navbar-form">
-                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
-                        </form>
-                    </li>                    
-                </ul>
-            </div>
             <!-- notificatoin dropdown start-->
             <div class="top-nav notification-row">                
                 <!-- user login dropdown start -->
@@ -68,7 +53,8 @@
                             <span class="profile-ava">
                                 <img alt="" src="../img/avatar1_small.jpg">
                             </span>
-                            
+                            <span class="username"><?php echo $_SESSION['user_name']; ?></span>
+                            <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
@@ -156,12 +142,12 @@
                                                 }
                                               } else { $mensaje = "No hay Identificadores NFC disponibles"; }
                                            ?>
-                                          </select> <label class="control-label" ><?php if ($count == 0){ echo $mensaje; } ?></label>
+                                          </select> <label class="control-label" style="padding-left: 10px;"><?php if ($count == 0){ echo $mensaje; } ?></label>
                                       </div> 
                                   </div>
                           </div>
                       </section>
-                        <div class="btn-group col-lg-4" style="padding-left: 100px; width: 230px; padding-right: 30px; "> 
+                        <div class="btn-group col-lg-4" style="padding-left: 450px; width: 230px; padding-right: 30px; "> 
                          <input type = "submit" class="btn btn-primary" title="Agregar un nuevo participante" value="Registrar" style="padding-right: 40px; padding-left: 40px;">
                         </div>
                             </form>

@@ -38,7 +38,9 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
 	<link href="css/xcharts.min.css" rel=" stylesheet">	
 	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-    
+
+  <!-- REDIRECCIONAMIENTO AL GESTOR DE LOS ALUMNOS  -->
+    <!-- <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=basic_table.php"> -->
   </head>
 
   <body>
