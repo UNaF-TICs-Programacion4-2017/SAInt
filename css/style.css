@@ -1668,10 +1668,11 @@ div[data-role="editor-toolbar"] {
 
 .top-nav .username {
 
-    font-size: 13px;
+    font-size: 20px;
 
     color: #bdbdbd;
 
+    text-transform: capitalize;
 }
 
 

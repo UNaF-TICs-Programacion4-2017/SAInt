@@ -121,14 +121,18 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                               <div class="btn-group col-lg-4">
+                               <!-- <div class="btn-group col-lg-4">
                                     <select name = "value_nfc" class="btn btn-default dropdown-toggle">
                                     </select>
-                                </div>
+                                </div> -->
                           <div class="btn-group col-lg-4"> 
                             <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.php" 
                               title="Agregar un nuevo alumno">Agregar</a>
                          </div>
+                         <!-- <div class="btn-group col-lg-4"> 
+                            <a class="btn btn-primary" href="" 
+                              title="Agregar un nuevo alumno"> Iniciar Sorteo </a>
+                         </div> -->
                           </header>
                           <table class="table table-striped table-advance table-hover">
                            <tbody>

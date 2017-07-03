@@ -141,17 +141,17 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label" style="font-size:large;"> Motivo </label>
                                                   <div class="col-sm-10">
-                                                      <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                                                      <textarea class="form-control ckeditor" name="motivo_de_retiro" rows="6"></textarea>
                                                   </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="control-label col-lg-2" for="inputSuccess" style="font-size:large;"> Certificado </label>
                                       <div class="col-lg-10">
-                                          <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox1" value="si"> Si
+                                          <label class="label_radio r_off">
+                                              <input type="radio" id="radio-01" value="si" name="cert_retiro" checked> Si
                                           </label>
-                                          <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox2" value="no"> No
+                                          <label class="label_radio r_off">
+                                              <input type="radio" id="radio-02" value="no" name="cert_retiro"> No
                                           </label>
                                       </div>
                                   </div>
@@ -161,12 +161,15 @@
                                           <input type="text" class="form-control round-input">
                                       </div>
                                   </div>
+                              </form>
             </section>
             <!-- SIGUIENTE PÁGINA -->
                 <div class="row">
                     <div class="col-lg-3">
                         <form action="">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="this.form.action='registar-alumno-pag2.php'">Siguiente</button>  
+                            <!-- onclick="this.form.action='' | 
+                            Este codigo se usará a futuro para registrar el alumno retirado -->
+                            <button type="submit" class="btn btn-primary btn-lg btn-block""> Registrar </button>  
                         </form>
                     </div>
                 </div>
