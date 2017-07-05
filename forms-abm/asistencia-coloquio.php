@@ -87,6 +87,11 @@
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
                         </a>
+                        <li class="sub-menu">
+                        <a class="" href="../asistencia.php">
+                          <i class="icon_table"></i>
+                          <span>Registracion</span>
+                        </a>
               </ul>
           </div>
           <!-- sidebar menu end-->
@@ -132,7 +137,7 @@
                                   <div class="form-group">
                                       <label class="col-sm-4 control-label">NFC</label>
                                       <div class="btn-group">
-                                          <select name = "value_nfc" class="btn btn-default dropdown-toggle" required>
+                                          <select name = "value_nfc" class="btn btn-default dropdown-toggle" >
                                           <?php
                                               $extraido_DB = Cargar_Combo_NFC($Obj_BD);
                                               $count = $extraido_DB->rowCount();

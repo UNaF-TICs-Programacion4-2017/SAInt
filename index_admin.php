@@ -112,6 +112,11 @@
                           <i class="icon_table"></i>
                           <span>Gestor de Alumnos</span>
                         </a>
+                        <li class="sub-menu">
+                        <a class="" href="asistencia.php">
+                          <i class="icon_table"></i>
+                          <span>Registracion</span>
+                        </a>
               </ul>
           </div>
           <!-- sidebar menu end-->

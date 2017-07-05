@@ -6,8 +6,8 @@
 
       $id = isset($_GET['id'])? intval($_GET['id']) : Null;
       if ($id != NULL){
-        Eliminar($Obj_BD, $id);
-        header("location: basic_table.php");
+        Eliminar_Presente($Obj_BD, $id);
+        header("location: asistencia.php");
       }
 ?>
 <!DOCTYPE html>
@@ -117,7 +117,7 @@
           <!--overview start-->
           <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Detalle Alumnos</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Registracion</h3>
                 </div>
             </div>
               <!-- page start-->
@@ -133,7 +133,7 @@
                                 </div> -->
                           <div class="btn-group col-lg-4"> 
                             <a class="btn btn-primary" href="forms-abm/asistencia-coloquio.php" 
-                              title="Agregar un nuevo alumno">Agregar</a>
+                              title="Agregar un nuevo alumno">Agregar Registracion</a>
                          </div>
                          <!-- <div class="btn-group col-lg-4"> 
                             <a class="btn btn-primary" href="" 
@@ -145,25 +145,29 @@
                               <tr>
                                  <th><i class="icon_profile"></i> Apellido</th>
                                  <th><i class="icon_profile"></i> Nombre</th>
-                                 <th><i class="icon_mobile"></i> Telefono</th>
-                                 <th><i class="icon_mobile"></i> Identificador NFC</th>
+                                 <th><i class=""></i> Fecha Registrado</th>
+                                 <th><i class="icon_profile"></i> Identificador NFC</th>
+                                 <!-- <th><i class="icon_mobile"></i> Numero</th> -->
+                                 
                                  <th><i class="icon_cogs"></i> Accion</th>
                               </tr>
                               <?php 
-                                  $extradio_DB = Rellenar_Tabla($Obj_BD);
+                                  $extradio_DB = Recuperar_Presentes($Obj_BD);
                                   foreach ($extradio_DB as $row) {
                                     echo "<tr>";
                                     echo "<td>".$row['pers_apellido']."</td>";
                                     echo "<td>".$row['pers_nombre']."</td>";
-                                    echo "<td>".$row['cont_nro_telefono']."</td>";
-                                    echo "<td>".$row['alum_nfc']."</td>";
+                                     echo "<td>".$row['asis_fechahora']."</td>";
+                                     echo "<td>".$row['alum_nfc']."</td>";
+                                    
                                     ?>
                                     <td>
                                   <div class="btn-group">
                                       <a class="btn btn-primary" href= <?php echo 'forms-abm\registar-alumno.php?id='.$row['id_persona']; ?> 
                                          title = "Modificar"><i class="icon_plus_alt2"></i></a>
                                       
-                                      <a class="btn btn-danger" href= <?php echo 'basic_table.php?id='.$row['id_persona']; ?>
+                                      <a class="btn btn-danger" href=
+                                       <?php echo 'asistencia.php?id='.$row['id_asistencia']; ?>
                                          title = "Eliminar"><i class="icon_close_alt2"></i></a>
                                   </div>
                                   </td>
