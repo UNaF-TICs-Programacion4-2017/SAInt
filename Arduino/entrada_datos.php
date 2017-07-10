@@ -23,16 +23,22 @@ if ($estado->rowCount() == 0){
 	} else { echo  "El nfc ya se encuentra en la tabla de nfc disponibles"; }
 
 } else {
-	// SI ENTRO ACA ES PORQUE EL ALUMNO YA TIENE NFC, HAY QUE DARLE EL PRESENTE Y DEVOLVER EL NOMBRE
+	// SI ENTRO ACA ES PORQUE EL ALUMNO YA TIENE NFC, HAY QUE DARLE EL PRESENTE
 	foreach ($estado as $array) {
-		$Sentencia = "INSERT INTO tab_asistencia VALUES
+
+		$filtro = array('where' => array('rela_alumno' => $array['id_alumno']));
+		$estado = $Obj_BD->Consultar_Automatico('tab_asistencia', $filtro);
+
+		if ($estado->rowCount() == 0){
+			$Sentencia = "INSERT INTO tab_asistencia VALUES
 				 (NULL, CURRENT_TIMESTAMP, 'PRESENTE', 1, 1,'".$array['id_alumno']."', 1)";
+			$Obj_BD->Confirmar();
+			$Obj_BD->Consultar_Manual($Sentencia);
+			echo  "Registro Cargado";
+		}
+
 		break;
 	}
-	
-	$Obj_BD->Confirmar();
-	$Obj_BD->Consultar_Manual($Sentencia);
-	echo  "Registro Cargado";
 }
 
 ?>

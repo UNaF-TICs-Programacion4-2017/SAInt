@@ -28,17 +28,14 @@ $(document).ready(function () {
             name: 'Brands',
             colorByPoint: true,
             data: [{
-                name: 'Alumnos Presentes',
-                y: 56.33
+                name: 'Registracion con nfc',
+                y: 40
             }, {
-                name: 'Alumnos Ausentes',
-                y: 24.03,
+                name: 'Registracion con nfc',
+                y: 60,
                 sliced: true,
                 selected: true
-            }, {
-                name: 'Alumnos Retirados',
-                y: 10.38
-            }]
+            }, ]
         }]
     });
 });

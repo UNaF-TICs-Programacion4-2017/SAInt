@@ -26,7 +26,7 @@
 		$Obj_BD->Abrir_Transaccion(); //INSERTO SU TELEFONO
 		$insertar = array('id_contacto' => NULL,
 						 'cont_descripcion' => 0, //0 de celular
-						 'cont_nro_telefono' => $datos['telefono'],
+						 'cont_nro_telefono' => intval($datos['telefono']),
 						 'rela_persona' => $lastID_persona);
 		$OK = $Obj_BD->insertar('tab_contacto',$insertar);
 		$Obj_BD->Confirmar();
